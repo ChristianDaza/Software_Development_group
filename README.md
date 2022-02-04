@@ -1,4 +1,19 @@
-# Software_Development_group
+# Documentation
+
+## Requirment documents
+- Functionality of the software
+- Feature of the software
+- Goal
+
+## Architecture/Design Documents
+- provide an overview of the software’s architecture and highlight the design principles to be used.
+
+## Source code
+- this includes documents containing the software product’s actual code (Python, HTML, etc)
+
+## End user
+- Includes all the user documentation, such as user guides, user manuals, reference manuals
+
 
 The aim of this project is to create and deployed a piece of software with the following specifications :
 
