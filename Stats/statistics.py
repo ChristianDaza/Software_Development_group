@@ -38,7 +38,7 @@ def haplotype_diversity(filelist, mini, maxi):
         haplotypes = allel.HaplotypeArray(arr) # numpy array to haplotype array
         hd = allel.haplotype_diversity(haplotypes)  # haplotype diversity calculation
         results[country]= hd
-    results = pd.Dataframe.from_dict(results, orient='index', columns=['Haplotype Diversity'])  # return all results as a dataframe
+    results = pd.DataFrame.from_dict(results, orient='index', columns=['Haplotype Diversity'])  # return all results as a dataframe
     return results 
   
 
@@ -61,7 +61,7 @@ def tajima_D(filelist, mini, maxi):
         ac = geno.count_alleles()
         t = allel.tajima_d(ac, pos=position, start=mini, stop=maxi)  # Tajima's D calculation
         results[country] = t
-    results = pd.Dataframe.from_dict(results, orient='index', columns=['Tajima D'])  # return all results as a dataframe
+    results = pd.DataFrame.from_dict(results, orient='index', columns=['Tajima D'])  # return all results as a dataframe
     return results
 
 ###### Homozygosity ######
