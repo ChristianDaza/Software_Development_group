@@ -66,20 +66,21 @@ def tajima_D(filelist, mini, maxi):
 
 ###### Homozygosity ######
 
-def csvhomozygous(inputfile, mini, maxi, allele=None, axis=1):
+def homozygosity(inputfile, mini, maxi):
     """ Takes a CSV file as its input and returns the average homozygosity over a given region. """
     df = pd.read_csv(inputfile, index_col=0)
-    new_dataframe = df.filter(['POS'])
-    position = pd.DataFrame(new_dataframe, columns=['POS'])
+    df= df.loc[(df['POS'] >= mini) & (df['POS'] <= maxi)]
+    new_dataframe = df.filter(['POS'])  # extract the position from the dataframe
+    position = pd.DataFrame(new_dataframe, columns=['POS']).to_numpy()
+    position = position.flatten()    # alter position to one dimensional numpy array for correct input for sequence diversity function
     df = df.drop(['POS'], axis=1)
+    num = df.shape[1] / 2
     arr = pd.DataFrame(df).to_numpy()
     haplotypes = allel.HaplotypeArray(arr)
     gt = haplotypes.to_genotypes(ploidy=2)
-    h= gt.is_hom()
-    homo=np.sum(h, axis=1)
+    h = gt.is_hom()
+    homo = np.sum(h, axis=1)
     homo= pd.DataFrame(homo, columns=['HOMOZYGOSITY'])
-    homozygosity = pd.concat([position,homo],axis=1)
-    homozygosity['HOMOZYGOSITY'] = homozygosity['HOMOZYGOSITY'].div(len(list(vcf['samples'])))
-    homozygous= homozygosity.loc[(homozygosity['POS'] >= mini) & (homozygosity['POS'] <= maxi)]
-    homozyg=  homozygous['HOMOZYGOSITY'].sum() / len(homozygous.index)
-    return homozyg
+    homo['HOMOZYGOSITY'] = homo['HOMOZYGOSITY'].div(num)
+    homozygosity=  homo['HOMOZYGOSITY'].sum() / len(homo.index)
+    return homozygosity
