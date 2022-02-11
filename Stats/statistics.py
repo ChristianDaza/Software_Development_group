@@ -84,3 +84,30 @@ def homozygosity(inputfile, mini, maxi):
     homo['HOMOZYGOSITY'] = homo['HOMOZYGOSITY'].div(num)
     homozygosity=  homo['HOMOZYGOSITY'].sum() / len(homo.index)
     return homozygosity
+
+###### Homozygosity (accepts a list of files) ######
+
+
+def homozygosity_2(filelist, mini, maxi):
+    """ Takes a list of CSV files as its input and returns the average homozygosity over a given region. """
+    results = {}
+    for file in filelist:
+        df = pd.read_csv(file, index_col=0)
+        df= df.loc[(df['POS'] >= mini) & (df['POS'] <= maxi)]
+        new_dataframe = df.filter(['POS'])  # extract the position from the dataframe
+        position = pd.DataFrame(new_dataframe, columns=['POS']).to_numpy()
+        position = position.flatten()    # alter position to one dimensional numpy array for correct input for sequence diversity function
+        df = df.drop(['POS'], axis=1)
+        country = df.columns[0]
+        num = df.shape[1] / 2
+        arr = pd.DataFrame(df).to_numpy()
+        haplotypes = allel.HaplotypeArray(arr)
+        gt = haplotypes.to_genotypes(ploidy=2)
+        h = gt.is_hom()
+        homo = np.sum(h, axis=1)
+        homo= pd.DataFrame(homo, columns=['HOMOZYGOSITY'])
+        homo['HOMOZYGOSITY'] = homo['HOMOZYGOSITY'].div(num)
+        homozygosity =  homo['HOMOZYGOSITY'].sum() / len(homo.index)
+        results[country] = homozygosity
+    results = pd.DataFrame.from_dict(results, orient='index', columns=['Homozygosity'])
+    return results
