@@ -2,9 +2,25 @@ import allel
 import numpy as np
 import modin.pandas as pd
 
-###### Nucleotide Diversity ######
+###### Nucleotide Diversity (accepts a single of file) ######
 
-def nucleotide_diversity(filelist, mini, maxi):
+def nucleotide_diversity(inputfile, mini, maxi):
+    """ Computes nucleotide diversity within a given region from a CSV file containing position and haplotype data. """
+    df = pd.read_csv(inputfile, index_col=0)
+    new_dataframe = df.filter(['POS'])  # extract the position from the dataframe
+    position = pd.DataFrame(new_dataframe, columns=['POS']).to_numpy()
+    position = position.flatten()    # alter position to one dimensional numpy array for correct input for sequence diversity function
+    df = df.drop(['POS'], axis=1)
+    arr = pd.DataFrame(df).to_numpy()     # haplotype dataframe to numpy array
+    haplotypes = allel.HaplotypeArray(arr)   
+    geno = haplotypes.to_genotypes(ploidy=2)   # reshape haplotype array to genotype array for subsequent correct function input
+    ac = geno.count_alleles()
+    pi = allel.sequence_diversity(position, ac, start=mini, stop=maxi) # nucleotide diversity calculation
+    return pi
+
+###### Nucleotide Diversity (accepts a list of files) ######
+
+def nucleotide_diversity_list(filelist, mini, maxi):
     """ Computes nucleotide diversity within a given region from a list of CSV files containing position and haplotype data. """
     results = {}
     for file in filelist:
@@ -40,11 +56,28 @@ def haplotype_diversity(filelist, mini, maxi):
         results[country]= hd
     results = pd.DataFrame.from_dict(results, orient='index', columns=['Haplotype Diversity'])  # return all results as a dataframe
     return results 
-  
 
-###### Tajima's D ######
 
-def tajima_D(filelist, mini, maxi):
+###### Tajima's D (accepts a single of file)######
+
+def tajima_D(inputfile, mini, maxi):
+    """ Computes Tajima's D within a given region from a CSV file containing position and haplotype data. """
+    df = pd.read_csv(inputfile, index_col=0)
+    df = df.loc[(df['POS'] >= mini) & (df['POS'] <= maxi)]
+    new_dataframe = df.filter(['POS'])  # extract the position from the dataframe
+    position = pd.DataFrame(new_dataframe, columns=['POS']).to_numpy()
+    position = position.flatten()    # alter position to one dimensional numpy array for correct input for sequence diversity function
+    df = df.drop(['POS'], axis=1)
+    arr = pd.DataFrame(df).to_numpy()     # haplotype dataframe to numpy array
+    haplotypes = allel.HaplotypeArray(arr)   
+    geno = haplotypes.to_genotypes(ploidy=2)   # reshape haplotype array to genotype array for subsequent correct function input
+    ac = geno.count_alleles()
+    t = allel.tajima_d(ac, pos=position, start=mini, stop=maxi)
+    return t
+
+###### Tajima's D (accepts a list of files)######
+
+def tajima_D_list(filelist, mini, maxi):
     """ Computes Tajima's D within a given region from list of CSV files containing position and haplotype data. """
     results = {}
     for file in filelist:
@@ -64,7 +97,7 @@ def tajima_D(filelist, mini, maxi):
     results = pd.DataFrame.from_dict(results, orient='index', columns=['Tajima D'])  # return all results as a dataframe
     return results
 
-###### Homozygosity ######
+###### Homozygosity (accepts a single file) ######
 
 def homozygosity(inputfile, mini, maxi):
     """ Takes a CSV file as its input and returns the average homozygosity over a given region. """
