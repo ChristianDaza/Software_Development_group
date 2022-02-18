@@ -1,0 +1,58 @@
+import os
+import datetime
+
+######################################### main.py code ######################################################
+
+#  Look into the dynamic folder or the path of the folder in which the files were saved and create a list of saved files
+@app.route('/file_downloads/')
+def file_downloads():
+    # specified directory where files are saved
+    files = os.listdir(app.config['output'])
+    # List to append file names to
+    files_list = []
+    # If file within the especify directory then append them to the list
+    for file in files:
+        files_list.append(file)
+    return render_template('file_downloads.html', files_list = files_list)
+    
+    
+# if file not empty  download and after deleted form the folder
+@app.route('/display_downloads/<filename>', methods=["GET"])
+def display_downloads(filename):
+    # path to each of the csv files
+    filesize = os.stat("/Users/christiandavidarenasdaza/Desktop/pythonProject7/dynamic/{}".format(filename)).st_size
+    # Check if the CSV file is not empty
+    if filesize > 0:
+        return send_from_directory(app.config['output'], filename),\
+               os.remove("/Users/christiandavidarenasdaza/Desktop/pythonProject7/dynamic/{}".format(filename))
+           
+  ######################################### HTML code ######################################################
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>title</title>
+</head>>
+<body>
+
+
+      <div class="files-section">
+          {% for file in files_list %}                <!-- Loops through all the files wihtin the filelist of saved files -->
+          
+          <i class="fa fa-file-text-o"></i>            <!-- Give the file icon to each file -->
+          <a href="{{url_for('display_downloads',filename= file)}}">{{file}}</a> <!-- display the name  of each dave file  as a link-->
+
+
+
+          {% endfor %}
+
+      </div>
+
+<form action="/file_downloads/">                     <!-- Reloads the page since the after image of the file remians unless is reloded -->
+    <input type="submit" value="reload" />
+
+</form>
+
+
+</body>
+</html>>
