@@ -189,7 +189,7 @@ def homozygosit_by_window(filelist,size, mini, maxi):
     """ Takes a CSV file as its input and returns the average homozygosity over a given region. """
     results = {}
     for file in filelist:
-        df = pd.read_pickle(file)
+        df = (file)
         df= df.loc[(df['POS'] >= mini) & (df['POS'] <= maxi)]
         new_dataframe = df.filter(['POS'])  # extract the position from the dataframe
         position = pd.DataFrame(new_dataframe, columns=['POS']).to_numpy()
@@ -206,12 +206,12 @@ def homozygosit_by_window(filelist,size, mini, maxi):
         homozygote_count_array=homozygote_count.to_numpy()
         a,window,count=allel.windowed_statistic(position,homozygote_count_array,np.mean,size, start=mini, stop=maxi) ##compute the mean of homozygote indivduals in windows 
         results[country] = a
-        results = pd.DataFrame.from_dict(results, orient='index').T # return all results as a dataframe and transpose it for easy manipulations 
-        windows_lst=window.tolist() ##transform windows array to a list 
-        windowsdf=pd.DataFrame(windows_lst)    
-        final_df=pd.concat([windowsdf,results], axis=1)##create a data frame with the windows and the nucleotide diversity scores 
-        windows_axis=(final_df.iloc[: , 2:]) ## set the windows position as the the x-axis
-    ## plot nucleotide diversity scores by windows 
+    results = pd.DataFrame.from_dict(results, orient='index').T # return all results as a dataframe and transpose it for easy manipulations 
+    windows_lst=window.tolist() ##transform windows array to a list 
+    windowsdf=pd.DataFrame(windows_lst)    
+    final_df=pd.concat([windowsdf,results], axis=1)##create a data frame with the windows and the nucleotide diversity scores 
+    windows_axis=(final_df.iloc[: , 2:]) ## set the windows position as the the x-axis
+    
     fig = go.Figure()
     for idx, col in enumerate(windows_axis.columns, 0):
         fig.add_trace(go.Scatter(x = final_df.iloc[: , 0] , y = windows_axis.iloc[:,idx], mode ='lines', name = col))
@@ -222,6 +222,10 @@ def homozygosit_by_window(filelist,size, mini, maxi):
         yaxis=dict(title="Homozygosity"))
     Homozygosity_fig=fig.show()
     return Homozygosity_fig
+
+
+
+
 
 
 
