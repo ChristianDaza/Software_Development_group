@@ -15,10 +15,12 @@ def fst(filelist,mini,maxi):
         pairs=[(filelist[i],filelist[j]) for i in range(len(filelist)) for j in range(i+1, len(filelist))]##get all the possible combinations if the user pick more than 2 populations 
         inputlist1=[item[0] for item in pairs] ### seperate the combination lists into 2 list 
         inputlist2=[item[1] for item in pairs]
-        newData = [tuple(map(lambda i: str.replace(i, ".pkl"," "), tup)) for tup in pairs]
+        col=[]
+        col1=[]
+        #newData = [tuple(map(lambda i: str.replace(i, ".pkl"," "), tup)) for tup in pairs]
         output=[] ## create an empty list and append the results to the list to avoid the return statament to break the for loop 
         for (x,y) in zip(inputlist1,inputlist2):## a for loop to compute Allele frequency of each element of the lists 
-                df = pd.read_pickle(x)#, index_col=0)
+                df = x#, index_col=0)
                 df = df.loc[(df['POS'] >=  mini ) & (df['POS'] <= maxi)]
                 new_dataframe = df.filter(['POS'])  # extract the position from the dataframe
                 position = pd.DataFrame(new_dataframe, columns=['POS']).to_numpy()
@@ -28,7 +30,9 @@ def fst(filelist,mini,maxi):
                 haplotypes = allel.HaplotypeArray(arr)   
                 geno = haplotypes.to_genotypes(ploidy=2)   # reshape haplotype array to genotype array for subsequent correct function input
                 ac= geno.count_alleles()
-                df1 = pd.read_pickle(y)#, index_col=0)
+                results=df.columns[0]
+                col.append(results)
+                df1 = y#, index_col=0)
                 df1 = df1.loc[(df1['POS'] >=  mini ) & (df1['POS'] <= maxi)]
                 new_dataframe1 = df1.filter(['POS'])  # extract the position from the dataframe
                 position1 = pd.DataFrame(new_dataframe1, columns=['POS']).to_numpy()
@@ -38,18 +42,24 @@ def fst(filelist,mini,maxi):
                 haplotypes1 = allel.HaplotypeArray(arr1)   
                 geno1 = haplotypes1.to_genotypes(ploidy=2)   # reshape haplotype array to genotype array for subsequent correct function input
                 ac1= geno1.count_alleles()
+                results1=df1.columns[0]
+                col1.append(results1)
                 num,dem= allel.hudson_fst(ac,ac1) ## compute fst using allel package 
                 fst = np.sum(num) / np.sum(dem)
                 fst_lst=fst.tolist() ## tranform output array to a list in order to append it to the output list 
                 output.append(fst_lst)
-                df_fst = pd.DataFrame (output) ## trasnfom the output list to a data frame for easier reading  
-                #fst_df_final=df_fst
-        ## transpose the data frame 
-        df_fst.columns = newData
-        a=df_fst.T
-        a.columns=['Fixation index']
-        #df2 = fst_df_final.rename(columns=lambda x: x.strip('.pkl'))## name the data frame columns with the combinations calculated earlier 
-        return a
+                df_fst = pd.DataFrame (output) ## trasnfom the output list to a data frame for easier reading 
+                combi=list(zip(col ,col1))
+        
+        fst_=df_fst.T
+        fst_.columns=combi
+        fst_final=fst_.T
+        fst_final.columns = ['Fixation Index']
+        return fst_final
+        
+
+
+
             
 
 size=1000 
