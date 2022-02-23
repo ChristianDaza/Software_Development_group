@@ -299,17 +299,11 @@ def fst_plot(filelist,mini,maxi, size):
         combi = [(' vs '.join(c)) for c in combi]
         fst_.fillna(0)
         fst_.columns=combi
-
-
-
-        #fst_final=fst_.T
-        #fst_final.columns = ['Fixation Index']
     
                 
         windowsdf=pd.DataFrame(windows_lst)
         a=windowsdf.iloc[:, 0]
 
-        #fin.columns = 
         fig = go.Figure()
         for idx, col in enumerate(fst_.columns, 0):
             fig.add_trace(go.Scatter(x = a , y = (fst_.iloc[:,idx]), mode ='lines', name = str(col)))
