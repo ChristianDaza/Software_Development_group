@@ -36,7 +36,7 @@ def nucleotide_diversity_list(filelist, mini, maxi):
         ac = geno.count_alleles()
         pi = allel.sequence_diversity(position, ac, start=mini, stop=maxi) # nucleotide diversity calculation
         results[country] = pi
-    results = df.DataFrame.from_dict(results, orient='index', columns=['Nucleotide Diversity'])  # return all results as a dataframe
+    results = pd.DataFrame.from_dict(results, orient='index', columns=['Nucleotide Diversity'])  # return all results as a dataframe
     return results
   
     
@@ -59,7 +59,7 @@ def nucleotide_diversity_pkl(filelist, mini, maxi):
         ac = geno.count_alleles()
         pi = allel.sequence_diversity(position, ac, start=mini, stop=maxi) # nucleotide diversity calculation
         results[country] = pi
-    results = df.DataFrame.from_dict(results, orient='index', columns=['Nucleotide Diversity'])  # return all results as a dataframe
+    results = pd.DataFrame.from_dict(results, orient='index', columns=['Nucleotide Diversity'])  # return all results as a dataframe
     return results
   
 ###### Haplotype Diversity ######
