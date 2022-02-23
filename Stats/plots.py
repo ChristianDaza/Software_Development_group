@@ -226,12 +226,12 @@ def homozygosit_by_window(filelist,size, mini, maxi):
 
 
 
-def tajima_D_by_window (filelist, mini, maxi,size):
-    """ Computes Tajima's D within a given region from list of CSV files containing position and haplotype data. """
+size=1000 ## a default window size 
+def tajima_D_by_window1(filelist,size, mini, maxi):
+    """ Computes nucleotide diversity within a given region and a given window size  from a list of CSV files containing position and haplotype data. """
     results = {}
     for file in filelist:
-        df = pd.read_pickle(file)
-        df = df.loc[(df['POS'] >= mini) & (df['POS'] <= maxi)]
+        df = (file)
         new_dataframe = df.filter(['POS'])  # extract the position from the dataframe
         position = pd.DataFrame(new_dataframe, columns=['POS']).to_numpy()
         position = position.flatten()    # alter position to one dimensional numpy array for correct input for sequence diversity function
@@ -241,25 +241,22 @@ def tajima_D_by_window (filelist, mini, maxi,size):
         haplotypes = allel.HaplotypeArray(arr)   
         geno = haplotypes.to_genotypes(ploidy=2)   # reshape haplotype array to genotype array for subsequent correct function input
         ac = geno.count_alleles()
-        D, windows, counts= allel.windowed_tajima_d(position, ac, size=size, start=mini, stop=maxi)  # Tajima's D calculation
-        results[country] = D
-        results = pd.DataFrame.from_dict(results, orient='index').T # return all results as a dataframe and transpose it for easy manipulations 
-        results_final=results.fillna(0) ## fill the Nan value with 0 
-        #windows=windows.tolist() ##transform windows array to a list 
-        windowsdf=pd.DataFrame(windows)    
-        final_df=pd.concat([windowsdf,results_final], axis=1)##create a data frame with the windows and the nucleotide diversity scores 
-        windows_axis=(final_df.iloc[: , 2:]) ## set the windows position as the the x-axis
-    ## plot nucleotide diversity scores by windows 
+        pi, windows, counts = allel.windowed_tajima_d(position, ac,size, start=mini, stop=maxi,min_sites=0)# nucleotide diversity calculation
+        results[country] = pi
+    results = pd.DataFrame.from_dict(results, orient='index').T  # return all results as a dataframe
+    windows=windows.tolist() ##transform windows array to a list 
+    windowsdf=pd.DataFrame(windows)    
+    final_df=pd.concat([windowsdf,results], axis=1)##create a data frame with the windows and the nucleotide diversity scores 
+    windows_axis=(final_df.iloc[: , 2:]) ## set the windows position as the the x-axis
+
     fig = go.Figure()
     for idx, col in enumerate(windows_axis.columns, 0):
-        fig.add_trace(go.Scatter(x = final_df.iloc[: , 0] , y = windows_axis.iloc[:,idx], mode ='lines', name = col))
+        fig.add_trace(go.Scatter(x = final_df.iloc[: , 0] , y = (windows_axis.iloc[:,idx]), mode ='lines', name = col))
         fig.update_layout(
-    title_text="TajimaD  across windows")
+    title_text="TajimaD across windows")
         fig.update_layout(
     xaxis=dict(title="Window Positions (bp)"),
         yaxis=dict(title="TajimaD"))
-    Tajima_D_fig=fig.show()
+    Nucleotide_diversity_fig=fig.show()
 
-      
-    return  Tajima_D_fig
-
+    return  Nucleotide_diversity_fig
