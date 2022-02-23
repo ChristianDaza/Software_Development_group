@@ -11,10 +11,11 @@ import plotly.io as pio
 ###### Nucleotide Diversity (accepts a list of pkl) ######
 
 def nucleotide_diversity(filelist, mini, maxi):
-    """ Computes nucleotide diversity within a given region from a list of CSV files containing position and haplotype data. """
+    """ Computes nucleotide diversity within a given region from a list of objects of pkl files containing position and haplotype data. """
     results = {}
     for file in filelist:
         df = file
+        df = df.loc[(df['POS'] >= mini) & (df['POS'] <= maxi)] # collapse dataframe for region required
         new_dataframe = df.filter(['POS'])  # extract the position from the dataframe
         position = pd.DataFrame(new_dataframe, columns=['POS']).to_numpy()
         position = position.flatten()    # alter position to one dimensional numpy array for correct input for sequence diversity function
@@ -32,11 +33,11 @@ def nucleotide_diversity(filelist, mini, maxi):
  ###### Tajima's D (accepts a list of pkl)######
 
 def tajima_D(filelist, mini, maxi):
-    """ Computes Tajima's D within a given region from list of CSV files containing position and haplotype data. """
+    """ Computes Tajima's D within a given region from list of objects of pkl files containing position and haplotype data. """
     results = {}
     for file in filelist:
         df = file
-        df = df.loc[(df['POS'] >= mini) & (df['POS'] <= maxi)]
+        df = df.loc[(df['POS'] >= mini) & (df['POS'] <= maxi)]   # collapse dataframe for region required
         new_dataframe = df.filter(['POS'])  # extract the position from the dataframe
         position = pd.DataFrame(new_dataframe, columns=['POS']).to_numpy()
         position = position.flatten()    # alter position to one dimensional numpy array for correct input for sequence diversity function
@@ -54,11 +55,11 @@ def tajima_D(filelist, mini, maxi):
   ###### Homozygosity (accepts a list of pkl) ######
 
   def homozygosity(filelist, mini, maxi):
-    """ Takes a list of CSV files as its input and returns the average homozygosity over a given region. """
+    """ Takes a list of objects of pkl files as its input and returns the average homozygosity over a given region. """
     results = {}
     for file in filelist:
         df = file
-        df= df.loc[(df['POS'] >= mini) & (df['POS'] <= maxi)]
+        df= df.loc[(df['POS'] >= mini) & (df['POS'] <= maxi)]   # collapse data for region required
         new_dataframe = df.filter(['POS'])  # extract the position from the dataframe
         position = pd.DataFrame(new_dataframe, columns=['POS']).to_numpy()
         position = position.flatten()    # alter position to one dimensional numpy array for correct input for sequence diversity function
@@ -66,15 +67,15 @@ def tajima_D(filelist, mini, maxi):
         country = df.columns[0]
         num = df.shape[1] / 2
         arr = pd.DataFrame(df).to_numpy()
-        haplotypes = allel.HaplotypeArray(arr)
-        gt = haplotypes.to_genotypes(ploidy=2)
+        haplotypes = allel.HaplotypeArray(arr)  # haplotype array
+        gt = haplotypes.to_genotypes(ploidy=2)  # convert to genotype array
         h = gt.is_hom()
-        homo = np.sum(h, axis=1)
+        homo = np.sum(h, axis=1)    # homozygous counts
         homo= pd.DataFrame(homo, columns=['HOMOZYGOSITY'])
-        homo['HOMOZYGOSITY'] = homo['HOMOZYGOSITY'].div(num)
-        homozygosity =  homo['HOMOZYGOSITY'].sum() / len(homo.index)
-        results[country] = homozygosity
-    results = pd.DataFrame.from_dict(results, orient='index', columns=['Homozygosity'])
+        homo['HOMOZYGOSITY'] = homo['HOMOZYGOSITY'].div(num)        # homozygous frequency calculation
+        homozygosity =  homo['HOMOZYGOSITY'].sum() / len(homo.index)    # average homozygosity across region
+        results[country] = homozygosity 
+    results = pd.DataFrame.from_dict(results, orient='index', columns=['Homozygosity'])   # return results as a dataframe
     return results
    
  ###### FST (accepts a list of pkl) ######
@@ -88,7 +89,7 @@ def fst(filelist,mini,maxi):
         #newData = [tuple(map(lambda i: str.replace(i, ".pkl"," "), tup)) for tup in pairs]
         output=[] ## create an empty list and append the results to the list to avoid the return statament to break the for loop 
         for (x,y) in zip(inputlist1,inputlist2):## a for loop to compute Allele frequency of each element of the lists 
-                df = x#, index_col=0)
+                df = x
                 df = df.loc[(df['POS'] >=  mini ) & (df['POS'] <= maxi)]
                 new_dataframe = df.filter(['POS'])  # extract the position from the dataframe
                 position = pd.DataFrame(new_dataframe, columns=['POS']).to_numpy()
