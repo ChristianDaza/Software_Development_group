@@ -62,7 +62,7 @@ def fst(filelist,mini,maxi):
 
             
 
-size=1000 
+
 size=1000 
 def fst_window_plot(filelist,size,mini,maxi):
     
@@ -142,11 +142,13 @@ def fst_window_plot(filelist,size,mini,maxi):
 
 
 size=1000 ## a default window size 
+
+size=1000 ## a default window size 
 def nucleotide_diversity_by_window(filelist,size, mini, maxi):
     """ Computes nucleotide diversity within a given region and a given window size  from a list of CSV files containing position and haplotype data. """
     results = {}
     for file in filelist:
-        df = pd.read_pickle(file)
+        df = (file)
         new_dataframe = df.filter(['POS'])  # extract the position from the dataframe
         position = pd.DataFrame(new_dataframe, columns=['POS']).to_numpy()
         position = position.flatten()    # alter position to one dimensional numpy array for correct input for sequence diversity function
@@ -166,7 +168,7 @@ def nucleotide_diversity_by_window(filelist,size, mini, maxi):
     ## plot nucleotide diversity scores by windows 
     fig = go.Figure()
     for idx, col in enumerate(windows_axis.columns, 0):
-        fig.add_trace(go.Scatter(x = final_df.iloc[: , 0] , y = np.log(windows_axis.iloc[:,idx]), mode ='lines', name = 'nd'+col))
+        fig.add_trace(go.Scatter(x = final_df.iloc[: , 0] , y = np.log(windows_axis.iloc[:,idx]), mode ='lines', name = col))
         fig.update_layout(
     title_text="Nucletotide Diversity across windows")
         fig.update_layout(
