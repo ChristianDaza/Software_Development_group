@@ -11,7 +11,7 @@ import time
 ################################################# Download ##################################################
 
 
-### Set paht to  download folder ###
+### Set path to  download folder ###
 app.config['path_stat_results_folder'] = os.path.join(os.getcwd(), 'dynamic')
 
 #### Inside the functions returning the satistical results ####
