@@ -1,0 +1,42 @@
+################################################# Imports #################################################################
+from flask_apscheduler import APScheduler
+import atexit
+import time
+
+################################################# Setting up  of apscheduler ###########################################
+# Set configuration values
+class Config:
+    SCHEDULER_API_ENABLED = True
+
+# Initialize scheduler
+scheduler = APScheduler()
+
+################################################# Cleaning fucntion ##################################################
+@scheduler.task('interval', id='del_files', seconds=1800, misfire_grace_time=900)
+def del_files():
+    """ Delete the saved statistics  results  csv files after 30 minutes """
+    current_time = time.time()
+    size_stats_results_folder = os.stat(app.config['path_stat_results_folder']).st_size
+
+    # if folder of save statistics results is not empty and the csv files inside are less tha a day old, delete them
+    if size_stats_results_folder > 0:
+        for stat_results_filename in os.listdir(app.config['path_stat_results_folder']):
+            if os.path.getmtime(os.path.join(app.config['path_stat_results_folder'], stat_results_filename)) < current_time   -1:
+                if os.path.isfile(os.path.join(app.config['path_stat_results_folder'], stat_results_filename)):
+                    print(stat_results_filename)
+                    os.remove(os.path.join(app.config['path_stat_results_folder'], stat_results_filename))
+    else:
+        pass
+
+################################################# App scheduler  inside  start web server code ###########################
+
+
+if __name__ == '__main__':
+    # Start app schedualer once the app has been started
+    scheduler.start()
+    # Shut down apscheduler after leaving the application
+    atexit.register(lambda: scheduler.shutdown())
+    app.run(debug=True)
+
+
+
