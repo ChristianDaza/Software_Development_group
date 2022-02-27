@@ -27,7 +27,7 @@ def del_files():
     size_Download_folder = os.stat(app.config['path_Download_folder']).st_size
 
     if size_Download_folder > 0:
-        # For each file in the download folder 
+        # For each file in the download folder, although there will only be one file. This was done thinking in a future inplementation.
         for stat_results_filename in os.listdir(app.config['path_Download_folder']):
             # Check if they are less than  1 day
             if os.path.getmtime(os.path.join(app.config['path_Download_folder'], stat_results_filename)) < current_time  -1:
