@@ -1,12 +1,13 @@
-########################################### Imports #######################################
+########################################### Imports ################################################
 import pandas as pd
+import os
 
 ########################################### Setting up paths #######################################
 
 # Set the path for the  saved  statistical results file
 app.config['path_Results.txt'] = os.path.join(os.getcwd(), 'Downloads', 'Results.txt')
 
-########################################### Saving the data frames  into  the Download folder #######################################
+###################### Saving the data frames  into  the Download folder ###########################
 
 # Save the data frame as a csv file into th Download folder
 retdf.to_csv(path_or_buf= os.path.join(os.getcwd(), 'Downloads', 'Results.txt'), sep=',')
@@ -29,18 +30,4 @@ def return_files():
     except FileNotFoundError:
         return "Unable to download file please try again"
 
-
-########################################### HTML #######################################
-
-</div>
-<body class="body">
-   <div class="container" align="left">
-
-
-       <!-- When click downloads the results.txt file -->
-		<a href="/return_files" target="blank"><button class='btn btn-default'>Download</button></a>
-
-
-
-   </div>
 
