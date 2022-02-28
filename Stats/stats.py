@@ -131,7 +131,7 @@ def fst(filelist,mini,maxi):
 ###### Nucleotide Diversity PLOT ######
 
     def nucleotide_diversity_by_window(filelist, mini, maxi, size):
-    """ Computes nucleotide diversity within a given region and a given window size  from a list of CSV files containing position and haplotype data. """
+     """ Takes a list of pickle Files, a window size, a start position, an end postion  and output a plot of Nucleotide Diversity over the selected region in sliding windows""""
     results = {}
     for file in filelist:
         df = (file)
@@ -209,9 +209,9 @@ def homozygosity_plot(filelist, mini, maxi, size):
 ###### Tajima D PLOT ######
 
 def tajima_D_plot (filelist, mini, maxi,size):
-    """ Computes Tajima's D within a given region from list of CSV files containing position and haplotype data. """
-    results = {}
-    for file in filelist:
+     """ Takes a list of pickle Files, a window size, a start position, an end postion  and output a plot of TajimaD over the selected region in sliding windows""""
+   results = {} 
+   for file in filelist:
         df = file
         df = df.loc[(df['POS'] >= mini) & (df['POS'] <= maxi)]
         new_dataframe = df.filter(['POS'])  # extract the position from the dataframe
@@ -231,7 +231,7 @@ def tajima_D_plot (filelist, mini, maxi,size):
     windowsdf=pd.DataFrame(windows)    
     final_df=pd.concat([windowsdf,results_final], axis=1)##create a data frame with the windows and the nucleotide diversity scores 
     windows_axis=(final_df.iloc[: , 2:]) ## set the windows position as the the x-axis
-    ## plot nucleotide diversity scores by windows 
+    ## plot results  
     fig = go.Figure()
     for idx, col in enumerate(windows_axis.columns, 0):
         fig.add_trace(go.Scatter(x = final_df.iloc[: , 0] , y = windows_axis.iloc[:,idx], mode ='lines', name = col))
@@ -240,7 +240,7 @@ def tajima_D_plot (filelist, mini, maxi,size):
         fig.update_layout(
     xaxis=dict(title="Window Positions (bp)"),
         yaxis=dict(title="TajimaD"))
-        
+    ## Transform the graph into a jason file in order to imbeded into Flask     
     graphJSON = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
     return graphJSON
 
