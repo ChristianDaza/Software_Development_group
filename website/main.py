@@ -181,11 +181,10 @@ def pos_results(position1, position2):
 @app.route('/Gene_name_results/<gene>', methods=['GET','POST'])
 def gene_results(gene):
     data.gname=gene
-    dff1 = dff.fillna('-')
     # query database for an gene name using pandas.query and store results in a new dataframe
-    df2 = dff1.query("Gene_Name == '%s'" %gene)
+    df2 = dff.query("Gene_Name == '%s'" %gene)
     # query database for a gene alias using pandas.query and store results in a new dataframe
-    df2_2 = dff1[dff1['Aliases'].str.contains(gene)]
+    df2_2 = dff[dff['Aliases'].str.contains(gene)]
     # create list with both df's and concatanate them
     frames = [df2, df2_2]
     findf = pd.concat(frames)
