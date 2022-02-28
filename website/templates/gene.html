@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>Gene</title>
+
+{% extends "layout.html" %}
+{% block content %}
+
+</head>
+<!-- Introductory -->
+<div class="container-fluid">
+    <div class="mt-4 p-5 bg-transparent text-Black rounded">
+        <h1 class="display-1">Gene Name or Alias Search Engine</h1>
+        <p class="lead text-buffer">SNP data can be retrieved within the region of a specified gene.
+            To retrieve all SNPs located within the region of a gene,
+            please enter a valid HGNC accepted gene name or alias.</p>
+    </div>
+</div>
+<!-- Display error message if no results are found -->
+<center>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class=flashes>
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+</center>
+
+<!-- Search function and formatting -->
+<div class="container-fluid text-buffer">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-4">
+            <!-- Search bar -->
+            <form method="post" role="form">
+                {{ form.csrf_token }}
+                <div class="form-group">
+                    <input type="text" class="form-control" id="gene" name="gene" placeholder="Enter a valid Gene name or Alias">
+                    <br>
+                </div>
+                <br>
+                <!-- Search button -->
+                <center>
+                    <button type="submit" class="searchButton bottommarg">Submit</button>
+                </center>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+

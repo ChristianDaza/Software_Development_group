@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<HTML lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rsID Results</title>
+    {% extends "layout.html" %}
+    {% block content %}
+</head>
+
+<!-- Introductory -->
+<div class="container-fluid">
+    <div class="mt-4 p-2 bg-transparent text-Black rounded">
+        <h1 class="display-1">rsID Results</h1>
+    </div>
+</div>
+<div class="container mt-3">
+  <br>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active text-secondary" data-bs-toggle="tab" href="#Profile">Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-secondary" data-bs-toggle="tab" href="#Gujarati">Gujarati</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-secondary" data-bs-toggle="tab" href="#GambianMandinka">Gambian Mandinka</a>
+    </li>
+      <li class="nav-item">
+          <a class="nav-link text-secondary" data-bs-toggle="tab" href="#Japanese">Japanese</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link text-secondary" data-bs-toggle="tab" href="#PuertoRican">Puerto Rican</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link text-secondary" data-bs-toggle="tab" href="#Toscani">Toscani</a>
+      </li>
+  </ul>
+
+  <!-- Tab panes -->
+    <div class="tab-content">
+        <div id="Profile" class="container tab-pane active"><br>
+            <div class="container-fluid table-buffer">
+                <center>
+                    <!-- Tab containing general data -->
+                    {% for table in table1 %}
+                    {{ table|safe }}
+                    {% endfor %}
+                </center>
+                <h4>External links:</h4>
+                <h6 class="text-buffer">ENSEMBL: <a href="https://grch37.ensembl.org/Homo_sapiens/Variation/Explore?v={{rsID}}" class="text-info">{{rsID}}</a></h6>
+                <h6 class="text-buffer bottommarg">NCBI: <a href="https://www.ncbi.nlm.nih.gov/snp/{{rsID}}" class="text-info">{{rsID}}</a></h6>
+            </div>
+        </div>
+        <div id="Gujarati" class="container tab-pane fade"><br>
+            <h3>Gujarati Population</h3>
+            <div class="container-fluid table-buffer">
+                <center>
+                    <!-- Subsequent tables contain population specific data for each subtab -->
+                    {% for table2 in table2 %}
+                    {{ table2|safe }}
+                    {% endfor %}
+                </center>
+            </div>
+        </div>
+        <div id="GambianMandinka" class="container tab-pane fade"><br>
+            <h3>Gambian Mandinka Population</h3>
+            <div class="container-fluid table-buffer">
+                <center>
+                    {% for table3 in table3 %}
+                    {{ table3|safe }}
+                    {% endfor %}
+                </center>
+            </div>
+        </div>
+        <div id="Japanese" class="container tab-pane fade"><br>
+            <h3>Japanese Population</h3>
+            <div class="container-fluid table-buffer">
+                <center>
+                    {% for table4 in table4 %}
+                    {{ table4|safe }}
+                    {% endfor %}
+                </center>
+            </div>
+        </div>
+        <div id="PuertoRican" class="container tab-pane fade"><br>
+            <h3>Puerto Rican Population</h3>
+            <div class="container-fluid table-buffer">
+                <center>
+                    {% for table5 in table5 %}
+                    {{ table5|safe }}
+                    {% endfor %}
+                </center>
+            </div>
+        </div>
+        <div id="Toscani" class="container tab-pane fade"><br>
+            <h3>Toscani Population</h3>
+            <div class="container-fluid table-buffer">
+                <center>
+                    {% for table6 in table6 %}
+                    {{ table6|safe }}
+                    {% endfor %}
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{%endblock%}

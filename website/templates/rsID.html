@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>rsID</title>
+
+    {% extends "layout.html" %}
+    {% block content %}
+
+</head>
+
+<!-- Introductory -->
+
+<div class="container-fluid">
+    <div class="mt-4 p-5 bg-transparent text-Black rounded">
+        <h1 class="display-1">rsID Search Engine</h1>
+        <p class="lead text-buffer">Most SNPs are assigned a rsID, a variant identifier assigned by dbSNP or EVA,
+            which is used both in databases and by scientific researchers to identify a specific SNP.
+            To search for a bi-allelic SNP located on chromosome 22, please enter a valid rsID. </p>
+    </div>
+</div>
+<!-- Display error message if no results are found -->
+<center>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class=flashes>
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+</center>
+<!-- Search function and formatting -->
+<div class="container-fluid text-buffer">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-4">
+            <!-- Search bar -->
+            <form method="post" role="form">
+                {{ form.csrf_token }}
+                <div class="form-group">
+                    <input type="text" class="form-control" id="rsID" name="rsID" placeholder="Enter a valid rsID">
+                    <br>
+                </div>
+                <br>
+                <!-- Search button -->
+                <center>
+                    <button type="submit" class="searchButton bottommarg">Submit</button>
+                </center>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+
+
+    {% endblock %}
+
+

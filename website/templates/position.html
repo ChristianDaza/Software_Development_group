@@ -1,0 +1,60 @@
+<html>
+<head>
+	<title>Position</title>
+
+    {% extends "layout.html" %}
+    {% block content %}
+
+</head>
+
+<!-- Introductory -->
+
+<div class="container-fluid">
+    <div class="mt-4 p-5 bg-transparent text-Black rounded">
+        <h1 class="display-1">Genomic co-ordinates Search Engine</h1>
+        <p class="lead text-buffer"> SNPs are described as variations at a single position in the
+            DNA sequence among individuals. Search for SNPs based on a genomic region by entering the start
+            and end coordinates of the region.</p>
+    </div>
+</div>
+
+<!-- Display error message if no results are found -->
+<center>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class=flashes>
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+</center>
+
+<!-- Search function and formatting -->
+<div class="container-fluid text-buffer">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-4">
+            <!--Search bar for start and end positions -->
+            <form method="post" role="form">
+                {{ form.csrf_token }}
+                <div class="form-group">
+                    <input type="text" class="form-control" id="position1" name="position1" placeholder="Enter the start position">
+                    <br>
+                </div>
+				<div class="form-group">
+                    <input type="text" class="form-control" id="position2" name="position2" placeholder="Enter the end position">
+                    <br>
+                </div>
+                <br>
+                <!-- Search button -->
+                <center>
+                    <button type="submit" class="searchButton bottommarg">Submit</button>
+                </center>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+
+    {% endblock %}

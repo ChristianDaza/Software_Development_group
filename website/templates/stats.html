@@ -1,0 +1,95 @@
+<html>
+<head>
+	<title>Statistics</title>
+
+    {% extends "layout.html" %}
+    {% block content %}
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+</head>
+<!-- Introductory -->
+<div class="container-fluid">
+    <div class="mt-4 p-2 bg-transparent text-Black rounded">
+        <h1 class="display-1">Statistics Results</h1>
+        <p class="lead"> GIH: Gujarati Population</p>
+        <p class="lead"> GWD: Gambian Mandinka Population</p>
+        <p class="lead"> JPT: Japanese Population</p>
+        <p class="lead"> PUR: Puerto Rican Population</p>
+        <p class="lead"> TSI:  Toscani Population</p>
+    </div>
+</div>
+  <br>
+<!-- Display the table results -->
+<div class="container-fluid">
+    <h2> Summary statistics:</h2>
+</div>
+<!-- Nucleotide Diversity, Homozygosity and Tajima D results -->
+<div class="container-fluid table-buffer">
+    <center>
+    {% for tabl in tabl %}
+    {{ tabl|safe }}
+    {% endfor %}
+    </center>
+</div>
+<!-- FST results -->
+<div class="container-fluid table-buffer">
+    <center>
+    {{ tabl2|safe }}
+    </center>
+</div>
+<!-- Display the interactive plots (embedded) -->
+<div class="container-fluid">
+    <h2>Plots:</h2>
+</div>
+<div class="chart" id="chart">
+    <script>
+    var graphs = {{plot1 | safe}};
+    Plotly.plot('chart',graphs,{});
+    </script>
+</div>
+
+<div class="chart" id="chart2">
+    <script>
+    var graphs = {{plot2 | safe}};
+    Plotly.plot('chart2',graphs,{});
+    </script>
+</div>
+
+<div class="chart" id="chart3">
+    <script>
+    var graphs = {{plot3 | safe}};
+    Plotly.plot('chart3',graphs,{});
+    </script>
+</div>
+
+<div class="chart" id="chart4">
+    <script>
+    var graphs = {{plot4 | safe}};
+    Plotly.plot('chart4',graphs,{});
+    </script>
+</div>
+<!--Download button -->
+<body class="body">
+   <div class="container" align="centre">
+       <center>
+           <a href="/return-files/" target="blank"><button class='calculateButton button-buffer bottommarg'>Download</button></a>
+       </center>
+   </div>
+</body>
+<!-- Back button (prevents error in some stats calculation -->
+<div class="container-fluid">
+    <button class='calculateButton button-buffer' onclick="goBack()" style="width:100px">Back</button>
+</div>
+
+<!-- Script for back button -->
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+
+
+<!-- Scripts required for plotly graph display into HTML -->
+
+{%endblock%}

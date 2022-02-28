@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Position Results</title>
+    {% extends "layout.html" %}
+    {% block content %}
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+</head>
+<!-- Introductory -->
+<div class="container-fluid">
+    <div class="mt-4 p-2 bg-transparent text-Black rounded">
+        <h1 class="display-1">Position Results</h1>
+    </div>
+</div>
+<div class="container mt-3">
+  <br>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs"  id="myTab" role="tablist" >
+    <li class="nav-item">
+      <a class="nav-link active text-secondary" data-bs-toggle="tab" href="#Results">Results</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-secondary" data-bs-toggle="tab" href="#Gujarati">Gujarati</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-secondary" data-bs-toggle="tab" href="#GambianMandinka">Gambian Mandinka</a>
+    </li>
+      <li class="nav-item">
+          <a class="nav-link text-secondary" data-bs-toggle="tab" href="#Japanese">Japanese</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link text-secondary" data-bs-toggle="tab" href="#PuertoRican">Puerto Rican</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link text-secondary" data-bs-toggle="tab" href="#Toscani">Toscani</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link text-secondary" data-bs-toggle="tab" href="#Stats">Statistics Tool</a>
+      </li>
+  </ul>
+
+  <!-- Tab panes -->
+    <div class="tab-content">
+        <div id="Results" class="container tab-pane active"><br>
+            <h3>Results</h3>
+            <p class="text-buffer text-muted"> {{hits}} results.</p>
+                <div class="container-fluid table-buffer">
+                    <center>
+                         <!-- Table containing general data -->
+                        {% for table in table1 %}
+                        {{ table|safe }}
+                        {% endfor %}
+                    </center>
+                </div>
+        </div>
+        <div id="Gujarati" class="container tab-pane fade"><br>
+            <h3>Gujarati Population</h3>
+                <div class="container-fluid table-buffer">
+                    <center>
+                        <!-- Subsequent tables contain population specific data for each subtab -->
+                        {% for table2 in table2 %}
+                        {{ table2|safe }}
+                        {% endfor %}
+                    </center>
+                </div>
+        </div>
+        <div id="GambianMandinka" class="container tab-pane fade"><br>
+            <h3>Gambian Mandinka Population</h3>
+                <div class="container-fluid table-buffer">
+                    <center>
+                        {% for table3 in table3 %}
+                        {{ table3|safe }}
+                        {% endfor %}
+                    </center>
+                </div>
+        </div>
+        <div id="Japanese" class="container tab-pane fade"><br>
+            <h3>Japanese Population</h3>
+                <div class="container-fluid table-buffer">
+                    <center>
+                        {% for table4 in table4 %}
+                        {{ table4|safe }}
+                        {% endfor %}
+                    </center>
+                </div>
+        </div>
+        <div id="PuertoRican" class="container tab-pane fade"><br>
+            <h3>Puerto Rican Population</h3>
+            <div class="container-fluid table-buffer">
+                    <center>
+                        {% for table5 in table5 %}
+                        {{ table5|safe }}
+                        {% endfor %}
+                    </center>
+                </div>
+        </div>
+        <div id="Toscani" class="container tab-pane fade"><br>
+            <h3>Toscani Population</h3>
+            <div class="container-fluid table-buffer">
+                <center>
+                    {% for table6 in table6 %}
+                    {{ table6|safe }}
+                    {% endfor %}
+                </center>
+            </div>
+        </div>
+            <!-- Stats tool -->
+        <div id="Stats" class="container tab-pane fade"><br>
+            <h3>Statistics Tool</h3>
+            <form method="POST" action="/stats">
+                <div class="fluid-container text-buffer">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <center>
+                                <!-- Population selection form -->
+                                <h4 class="text-buffer"> Select the population(s) of interest:</h4>
+                                <input type="checkbox" class="btn-check " name="pop" value="GIH" id="GIH" autocomplete="off">
+                                <label class="btn btn-outline-secondary check-buffer" for="GIH" style="width:200px">Gujarati</label><br>
+                                <input type="checkbox" class="btn-check " name="pop" value="GWD" id="GWD" autocomplete="off">
+                                <label class="btn btn-outline-secondary check-buffer" for="GWD" style="width:200px">Gambian Mandinka</label><br>
+                                <input type="checkbox" class="btn-check " name="pop" value="JPT" id="JPT" autocomplete="off">
+                                <label class="btn btn-outline-secondary check-buffer" for="JPT" style="width:200px">Japanese</label><br>
+                                <input type="checkbox" class="btn-check " name="pop" value="PUR" id="PUR" autocomplete="off">
+                                <label class="btn btn-outline-secondary check-buffer" for="PUR" style="width:200px">Puerto Rican</label><br>
+                                <input type="checkbox" class="btn-check " name="pop" value="TSI" id="TSI" autocomplete="off">
+                                <label class="btn btn-outline-secondary check-buffer" for="TSI" style="width:200px">Toscani</label><br>
+                            </center>
+                        </div>
+                        <div class="col-md-6">
+                            <center>
+                                <!-- Statistical test form -->
+                                <h4 class="text-buffer">Select the summary statistic(s) of interest:</h4>
+                                <input type="checkbox" class="btn-check" name="stat" value="a" id="NV" autocomplete="off">
+                                <label class="btn btn-outline-secondary check-buffer text-buffer" for="NV" style="width:200px">Nucleotide Diversity</label><br>
+                                <input type="checkbox" class="btn-check" name="stat" value="b" id="Homo" autocomplete="off">
+                                <label class="btn btn-outline-secondary check-buffer" for="Homo" style="width:200px">Homozygosity</label><br>
+                                <input type="checkbox" class="btn-check" name="stat" value="c" id="TAJ" autocomplete="off">
+                                <label class="btn btn-outline-secondary check-buffer" for="TAJ" style="width:200px">Tajima's D</label><br>
+                                <input type="checkbox" class="btn-check" name="stat" value="d" id="FST" autocomplete="off">
+                                <label class="btn btn-outline-secondary check-buffer" for="FST" style="width:200px">Fixation Index (FST)</label><br>
+                            </center>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-md-4">
+                            <h4 class="text-buffer"> Enter a window size for plots:</h4>
+                            <input type="text" class="form-control button-buffer" id="windowsize" placeholder="Enter a valid window size (bp)" name="window">
+                        </div>
+                    </div>
+                </div>
+                <div class="container fluid ">
+                    <center>
+                        <!-- Display error messages if there are invalid selections for the Stats tool -->
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                        {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}" role="alert"> {{ message }}</div>
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                        <button type="submit" class="calculateButton button-buffer bottommarg">Calculate</button>
+                    </center>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Script for navigating to same stats mini-tab after reload if error is encountered (adds to user journey) -->
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+
+
+
+$(document).ready(() => {
+  let url = location.href.replace(/\/$/, "");
+
+  if (location.hash) {
+    const hash = url.split("#");
+    $('#myTab a[href="#'+hash[1]+'"]').tab("show");
+    url = location.href.replace(/\/#/, "#");
+    history.replaceState(null, null, url);
+    setTimeout(() => {
+      $(window).scrollTop(0);
+    }, 400);
+  }
+
+  $('a[data-toggle="tab"]').on("click", function() {
+    let newUrl;
+    const hash = $(this).attr("href");
+    if(hash == "#home") {
+      newUrl = url.split("#")[0];
+    } else {
+      newUrl = url.split("#")[0] + hash;
+    }
+    newUrl += "/";
+    history.replaceState(null, null, newUrl);
+  });
+});
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+
+{% endblock %}

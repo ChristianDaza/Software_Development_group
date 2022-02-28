@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <title>SNP Browser</title>
+
+
+<!-- Introductory -->
+<div class="container-fluid">
+  <div class="mt-4 p-5 bg-transparent text-Black rounded">
+    <h1 class="display-1">SNP Browser</h1>
+    <p class="lead"> SNP Browser explores the presence of genetic variation between five populations by the retrieval of
+        Single Nucleotide Polymorphism (SNP) data, the most common type of genetic variation observed amongst humans.
+        The SNP Browser primarily focuses on data for bi-allelic SNPs located across chromosome 22 for Gujarati,
+        Gambian Mandinka, Japanese, Puerto Rican and Toscani populations, which is searchable by either rsID,
+        HGNC gene names or aliases and genomic position. These search engines are connected to a comprehensive database
+        that contains essential SNP data and observed allele and genotype frequencies across the five populations.
+        A statistics tool is also available, which calculates selected statistics which uncover insights into population
+        genetic variation, neutrality, and genetic and haplotype diversity.</p>
+  </div>
+</div>
+<!-- 3 equal containers - includes data on the three search tools and internal links -->
+<div class="container text-center">
+  <h1>Search Tools</h1>
+  <div class="row row-flex">
+    <div class="col-md-4 col-sm-6 col-xs-12 marginbot">
+      <div class="content colour-1">
+        <h3>rsID</h3>
+        <p class="lead text-buffer"> Our database holds data on over 1 million SNPs located across chromosome 22,
+        which are searchable by their appointed rsID, the standard naming convention for most SNPs. </p>
+        <a class="btn btn-light button-buffer" href="{{ url_for('rsID') }}" role="button">Get Started</a>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 marginbot">
+      <div class="content colour-1">
+        <h3>Genes</h3>
+        <p class="lead text-buffer">The SNP Browser database contains data on the corresponding HGNC accepted gene names and aliases.
+        The results will return all SNPs located within the region of the gene.</p>
+        <a class="btn btn-light button-buffer" href="{{ url_for('gene') }}" role="button">Get Started</a>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 marginbot">
+      <div class="content colour-1">
+        <h3>Genomic co-ordinates</h3>
+        <p class="lead text-buffer">SNP data can be retrieved by a set of genomic co-ordinates across chromosome 22.
+        All SNPs found to be located within the specified region in our database will be returned.</p>
+        <a class="btn btn-light button-buffer" href="{{ url_for('pos') }}" role="button">Get Started</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    {% endblock %}
