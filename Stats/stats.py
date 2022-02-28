@@ -3,10 +3,7 @@ import numpy as np
 import pandas as pd
 from allel.stats.window import moving_statistic
 import plotly.graph_objects as go
-import plotly as py
-import pandas as pd
-import plotly.express as px
-import plotly.io as pio  
+ 
     
 ###### Nucleotide Diversity (accepts a list of pkl) ######
 
@@ -170,7 +167,7 @@ def fst(filelist,mini,maxi):
 ###### Homozygosity PLOT ######
 
 def homozygosity_plot(filelist, mini, maxi, size):
-    """ Takes a CSV file as its input and returns the average homozygosity over a given region. """
+    """ Takes a list of pickle Files, a window size, a start position, an end postion  and output a jason file with a plot  of Homozygosity over the selected region in sliding windows""""
     results = {}
     for file in filelist:
         df = (file)
@@ -193,10 +190,10 @@ def homozygosity_plot(filelist, mini, maxi, size):
     results = pd.DataFrame.from_dict(results, orient='index').T # return all results as a dataframe and transpose it for easy manipulations 
     windows_lst=window.tolist() ##transform windows array to a list 
     windowsdf=pd.DataFrame(windows_lst)    
-    final_df=pd.concat([windowsdf,results], axis=1)##create a data frame with the windows and the nucleotide diversity scores 
+    final_df=pd.concat([windowsdf,results], axis=1)##create a data frame with the windows and the Homozygosity scores 
     final_df.fillna(0)
     windows_axis=(final_df.iloc[: , 2:]) ## set the windows position as the the x-axis
-    ## plot nucleotide diversity scores by windows 
+    ## plot results 
     fig = go.Figure()
     for idx, col in enumerate(windows_axis.columns, 0):
         fig.add_trace(go.Scatter(x = final_df.iloc[: , 0] , y = windows_axis.iloc[:,idx], mode ='lines', name = col))
@@ -205,7 +202,7 @@ def homozygosity_plot(filelist, mini, maxi, size):
         fig.update_layout(
     xaxis=dict(title="Window Positions (bp)"),
         yaxis=dict(title="Homozygosity"))
-        
+       ## Transform the graph into a jason file in order to imbeded into Flask  
     graphJSON = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
     return graphJSON
 
