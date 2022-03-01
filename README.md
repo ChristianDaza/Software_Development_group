@@ -64,7 +64,7 @@ The either click or copy and paste the URL into your browser (we recommend Googl
 
 APA:
 ```
-Arenas Daza, C. D., Krasniqi, E., & Lebboukh, K. R. (2022). SNP Browser (Version 1.0.0) [Computer software]. https://doi.org/10.5281/zenodo.1234![image](https://user-images.githubusercontent.com/53874392/156246345-5a083683-844d-4426-9ddf-632960097ce9.png)
+Arenas Daza, C. D., Krasniqi, E., Lebboukh, K. R., & Sevgi Bridges, Y. (2022). SNP Browser (Version 1.0.0) [Computer software]. https://doi.org/10.5281/zenodo.1234
 ```
 
 BibTeX:
