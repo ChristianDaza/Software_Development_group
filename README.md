@@ -1,5 +1,4 @@
-# Genome Analytics 
-![LogoSample_ByTailorBrands](https://user-images.githubusercontent.com/53874392/156174734-cd2c69b2-5448-45c0-8658-2f7906c83da0.jpg)
+# Genome Analytics ![LogoSample_ByTailorBrands](https://user-images.githubusercontent.com/53874392/156174734-cd2c69b2-5448-45c0-8658-2f7906c83da0.jpg)
 
 ## Overview
 ### Software Intro
