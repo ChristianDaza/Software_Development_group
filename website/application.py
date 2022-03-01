@@ -33,7 +33,7 @@ class Config:
 
 # Initialize scheduler
 scheduler = APScheduler()
-
+### Forms ###################################################################################################################################################################
 # create classes to define the forms
 class rsIDForm(FlaskForm):
     #string search form with a validator (something has to be input)
@@ -51,7 +51,8 @@ class geneForm(FlaskForm):
     gene = StringField('Enter a valid HGNC accepted Gene name or alias:', validators=[InputRequired()])
     submit3 = SubmitField('Submit')
 
-
+### DATA STORE #################################################################################################################################################################
+	
 # class to store data in global environment to allow for access of information between multiple routes
 class DataStore():
     pos1=None
@@ -60,6 +61,8 @@ class DataStore():
     genepos2=None
     gname=None
 data = DataStore()
+
+### Application ################################################################################################################################################################
 
 # read database
 dff = pd.read_csv('database.csv.gz', compression="gzip")
@@ -73,6 +76,7 @@ def home():
 @app.route('/about')
 def about():
     return render_template('about.html')
+### Search routes ###########################################################################################################################################################################################
 
 # defining the action of the 'rsID' route
 @app.route('/rsID', methods=['GET','POST'])
@@ -113,7 +117,7 @@ def gene():
     return render_template('gene.html', form=form, gene = gene)
 
 
-
+### Results Routes ##########################################################################################################################################################################################################
 
 # define rsIDresults route that takes an rsID parameter
 @app.route('/rsIDresults/<rsID>')
@@ -216,6 +220,7 @@ def gene_results(gene):
         flash('No results found.')
         return redirect('/Gene_name')
 
+### Statistic Routes ######################################################################################################################################################################################
 
 
 # read the genotype arrays as pickle files rather than dataframes
@@ -274,7 +279,7 @@ def stats():
             dd = []
             # receive input from form (for window size)
             wsize = request.form.get('window')
-            #if statement to return message if condition not met
+            # if statement to return message if condition not met
             if int(wsize) > (pos2-pos1):
                 flash('Invalid window selection - outside range.', 'error')
                 url = url_for('pos_results', position1=pos1, position2=pos2)
@@ -285,28 +290,24 @@ def stats():
                 url = url_for('pos_results', position1=pos1, position2=pos2)
                 url = url + '#Stats'
                 return redirect(url)
-            #statistical functions are run if checkboxes for them are chosen
+            # statistical functions are run if checkboxes for them are chosen
             if 'a' in statreq:
                 aa = nucleotide_diversity(pop_ls, pos1, pos2)
                 frames3.append(aa)
                 nucplot = nucleotide_diversity_plot(pop_ls, pos1, pos2, int(wsize))
-                #data2.nuc = nucleotide_diversity_plot(pop_ls, a, b, 1000)
             if 'b' in statreq:
                 bb = homozygosity(pop_ls, pos1, pos2)
                 frames3.append(bb)
                 homoplot = homozygosity_plot(pop_ls, pos1, pos2, int(wsize))
-                #data2.homo = homozygosity_plot(pop_ls, a, b, 1000)
             if 'c' in statreq:
                 cc = tajima_D(pop_ls, pos1, pos2)
                 frames3.append(cc)
                 tajplot = tajima_D_plot(pop_ls, pos1, pos2, int(wsize))
-                #data2.taj = tajima_D_plot(pop_ls, a, b, 1000)
             if 'd' in statreq:
                 dd = fst(pop_ls, pos1, pos2)
                 dd.index.rename('Population Code', inplace=True)
                 tabl2 = dd.to_html(classes='table text-center bottommarg')
                 fstplot = fst_plot(pop_ls, pos1, pos2, int(wsize))
-                #data2.fst = fst_plot(pop_ls, a, b, 1000)
             # return FST results
             if frames3 == []:
                 dd.to_csv(path_or_buf= os.path.join(os.getcwd(), 'Downloads', 'Results.txt'), sep=',')   # saves the fst results in a txt file
