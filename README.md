@@ -70,7 +70,7 @@ Arenas Daza, C. D., Krasniqi, E., Lebboukh, K. R., & Sevgi Bridges, Y. (2022). S
 BibTeX:
 ```
 @software{Arenas_Daza_SNP_Browser_2022,
-author = {Arenas Daza, Christian David and Krasniqi, Eri and Lebboukh, Khadidja Rym},
+author = {Arenas Daza, Christian David and Krasniqi, Eri and Lebboukh, Khadidja Rym and Sevgi Bridges, Yasemin},
 doi = {10.5281/zenodo.1234},
 month = {3},
 title = {{SNP Browser}},
