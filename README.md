@@ -48,7 +48,8 @@ To run this website from your local machine please download the "website" direct
 Our application can be run various ways including code editors such as Visual Studio Code, Pycharm or in the command line.
 In all cases open or navegate into the website directory in your local machine, and ran the following command.
 
-``` python3 application.py ```
+``` python3 application.py 
+```
 
 The either click or copy and paste the URL into your browser, we recommend Google Chrome. 
 
