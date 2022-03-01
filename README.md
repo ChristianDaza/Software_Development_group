@@ -50,7 +50,7 @@ In all cases open or navegate into the website directory in your local machine, 
 
 ``` python3 application.py ```
 
-The either click or copy and paste the URL into your browser (we recommend Google Chrome), which then will direct you into the homepage of SNP Browser, where you can start your graound braking research. 
+The either click or copy and paste the URL into your browser (we recommend Google Chrome), which then will direct you into the homepage of SNP Browser, where you can start your graound breaking research. 
 
 ## Authors 
 - Christian David Arenas Daza: [ChristianDaza](https://github.com/ChristianDaza)
