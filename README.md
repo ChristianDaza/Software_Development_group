@@ -1,5 +1,5 @@
 # Genome Analytics
-![](https://img.shields.io/badge/Version-1.0.0-blue) ![](https://img.shields.io/badge/Platforms%20-macOS-64|win--64-lightgrey)
+![](https://img.shields.io/badge/Version-1.0.0-blue) ![](https://img.shields.io/badge/Platforms%20-macOS-64_|_win--64-lightgrey)
 
 ##  SNP Browser  Software
 
