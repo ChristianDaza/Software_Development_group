@@ -26,17 +26,15 @@ This software was developed by the Genomic Analytics group (4 MSc Bioinformatics
 
 To install the above packages:
 ```
-pip install Flask
+pip install Flask-WTF  
 pip install Werkzeug
-pip install Flask-WTF
 pip install WTForms
 pip install Flask-Bootstrap
-pip install Flask-Bootstrap
 pip install Flask-APScheduler
-pip install Flask-APScheduler
-pip install request
-pip install Pandas
+pip install requests
 pip install scikit-allel
+![image](https://user-images.githubusercontent.com/53874392/156204095-f7e412ef-3022-47a0-97b5-319fb1e5ee52.png)
+
 ```
 
 ### Installing
