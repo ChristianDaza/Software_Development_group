@@ -81,8 +81,5 @@ year = {2022}
 ```
 
 
-
-### How shoudl be cited in a document 
-
 #### Licence
 
