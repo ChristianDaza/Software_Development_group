@@ -1,4 +1,5 @@
 # Genome Analytics
+https://img.shields.io/badge/Version-1.0.0-blue
 
 ##  SNP Browser  Software
 
@@ -60,24 +61,29 @@ The either click or copy and paste the URL into your browser (we recommend Googl
 
 ## Development status
 
-## Citation and reference
+## How to cite our software
+
+APA:
+```
+Arenas Daza, C. D., Krasniqi, E., & Lebboukh, K. R. (2022). SNP Browser (Version 1.0.0) [Computer software]. https://doi.org/10.5281/zenodo.1234![image](https://user-images.githubusercontent.com/53874392/156246345-5a083683-844d-4426-9ddf-632960097ce9.png)
+```
+
+BibTeX:
+```
+@software{Arenas_Daza_SNP_Browser_2022,
+author = {Arenas Daza, Christian David and Krasniqi, Eri and Lebboukh, Khadidja Rym},
+doi = {10.5281/zenodo.1234},
+month = {3},
+title = {{SNP Browser}},
+url = {https://github.com/ChristianDaza/Software_Development_group},
+version = {1.0.0},
+year = {2022}
+}
+```
+
+
 
 ### How shoudl be cited in a document 
 
 #### Licence
 
-#### Contributing
-
-
-
-
-
-
-
-The aim of this project is to create and deployed a piece of software with the following specifications :
-
-The user should be able to retrieve SNP information given either a genomic coordinate (chromosome, start and end), SNP name (rs value), or gene name (or any aliases associated to it).
-
-The application should return the following information for each SNP: name (rs value), genomic position, genotype frequencies, and allele frequency. Frequencies should be provided for each population separately.
-
-If multiple SNPs are returned, the user should be able to select the population(s) and summary statistics of interest, and the application will calculate them and plot their distribution in slidingwindows along the region. The user will also be able to download a text file with the values of summary statistics. At least three summary statistics should be reported, for instance: one index of genetic diversity, one on haplotype diversity (e.g. homozygosity), one test against neutrality (e.g. Tajima’s D). Additionally, if multiple populations are selected, then population genetic variation (FST value) for each pair of populations should be reported.
