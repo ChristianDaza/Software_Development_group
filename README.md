@@ -1,4 +1,4 @@
-# Home
+# Genome Analytics 
 
 ## Overview
 ### Software Intro
