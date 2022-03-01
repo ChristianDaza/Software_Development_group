@@ -7,7 +7,7 @@ SNP browser is a fast and accurate application that allows information retrieval
 This software was developed by the Genomic Analytics group (4 MSc Bioinformatics students From Queen Mary University) under the guidance of Professor Conrad Bessant and Dr Matteo Fumagalli, in response to the need for an inclusive platform that not only allows the querying and extraction of genomic information but also statistical testing.
 
 - Documentation: ablabalabakab
-- Source code: ![GitHub Dark](https://github.com/ChristianDaza/Software_Development_group/tree/Main/website)
+- Source code: ![GitHub light](https://github.com/ChristianDaza/Software_Development_group/tree/Main/website)
 
 
 
