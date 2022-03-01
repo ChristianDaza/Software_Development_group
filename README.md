@@ -12,11 +12,33 @@ This software was developed by the Genomic Analytics group (4 MSc Bioinformatics
 ### The following packages will be required  for this application 
 
 Python 3.9.5
+Flask==2.0.2
+Werkzeug==2.0.3
+Flask-WTF==1.0.0
+WTForms==3.0.1
+Flask_Bootstrap==3.3.7.1
+Flask_APScheduler==1.12.3
+reuqest==2.27.1
+Pandas==1.4.0
+scikit-allel==1.3.5
+
+To install the above packages:
+[copy content="100OFF"]
+pip install Flask
+pip install Werkzeug
+pip install Flask-WTF
+pip install WTForms
+pip install Flask-Bootstrap
+pip install Flask-Bootstrap
+pip install Flask-APScheduler
+pip install Flask-APScheduler
+pip install request
+pip install Pandas
+pip install scikit-allel
 
 ### Installing
 To run this website from your local machine please download the "website" directory
 
-### Supported enviroments
 
 ## Citation and reference
 
