@@ -1,27 +1,20 @@
 # Genome Analytics
 
 ##  SNP Browser  Software
- SNP browser is a fast and accurate application that allows information retrieval of SNPs from Chromosome 22 in conjunction with genotype and allele frequency, which the user is then able to perform genetic statistical testing; Tajima's D, Nucleotide diversity and fixation index.  The return results are display, plotted, and can be downloaded as a txt file. ![image](https://user-images.githubusercontent.com/53874392/156175466-c6a14a1c-d6a6-41fe-9af1-66c364e8e127.png)
 
-- Functionality of the software
-- Feature of the software, bullet point
-- Goal
+SNP browser is a fast and accurate application that allows information retrieval of SNPs from Chromosome 22 in conjunction with genotype and allele frequency.This application also allows the user to  perform genetic statistical testing; Tajima's D, Nucleotide diversity and fixation index. The return results are display, plotted, and can be downloaded as a txt file. 
 
-### Table of content
+This software was developed by the Genomic Analytics group (4 MSc Bioinformatics students From Queen Mary University) under the guidance of Professor Conrad Bessant and Dr Matteo Fumagalli, in response to the need for an inclusive platform that not only allows the querying and extraction of genomic information but also statistical testing.
 
-## Problem introduciton
-- Why the software was creted in the first place
-
-### Architecture/Design Documents
-- provide an overview of the software’s architecture and highlight the design principles to be used.
-
-### Source code
-- this includes documents containing the software product’s actual code (Python, HTML, etc)
 
 ## Getting  started - End user
-- Includes all the user documentation, such as user guides, user manuals, reference manuals
+
+### The following packages will be required  for this application 
+
+Python 3.9.5
 
 ### Installing
+To run this website from your local machine please download the "website" directory
 
 ### Supported enviroments
 
