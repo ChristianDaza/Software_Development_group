@@ -33,8 +33,6 @@ pip install Flask-Bootstrap
 pip install Flask-APScheduler
 pip install requests
 pip install scikit-allel
-![image](https://user-images.githubusercontent.com/53874392/156204095-f7e412ef-3022-47a0-97b5-319fb1e5ee52.png)
-
 ```
 
 ### Installing
