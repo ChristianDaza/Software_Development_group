@@ -6,7 +6,7 @@ SNP browser is a fast and accurate application that allows information retrieval
 
 This software was developed by the Genomic Analytics group (4 MSc Bioinformatics students From Queen Mary University) under the guidance of Professor Conrad Bessant and Dr Matteo Fumagalli, in response to the need for an inclusive platform that not only allows the querying and extraction of genomic information but also statistical testing.
 
-- Documentation:  https://github.com/ChristianDaza/Software_Development_group/blob/Main/website/Documentation
+- Documentation:  https://github.com/ChristianDaza/Software_Development_group/blob/Main/Documentation
 - Source code: https://github.com/ChristianDaza/Software_Development_group/tree/Main/website
 - Meet our team: 
 
@@ -48,10 +48,17 @@ To run this website from your local machine please download the "website" direct
 Our application can be run various ways including code editors such as Visual Studio Code, Pycharm or in the command line.
 In all cases open or navegate into the website directory in your local machine, and ran the following command.
 
-``` python3 application.py 
-```
+``` python3 application.py ```
 
-The either click or copy and paste the URL into your browser, we recommend Google Chrome. 
+The either click or copy and paste the URL into your browser (we recommend Google Chrome), which then will direct you into the homepage of SNP Browser, where you can start your graound braking research. 
+
+## Authors 
+- Christian David Arenas Daza: ![ChristianDaza](https://github.com/ChristianDaza)
+- Eri Krasniqi: ![erikras12](https://github.com/erikras12)
+- Khadidja Rym Lebboukh: ![RYM213](https://github.com/RYMY213)                                
+- Yasemin Sevgi Bridges: ![yaseminbridges](https://github.com/yaseminbridges)   
+
+## Development status
 
 ## Citation and reference
 
