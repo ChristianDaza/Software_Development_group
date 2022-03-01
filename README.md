@@ -53,10 +53,10 @@ In all cases open or navegate into the website directory in your local machine, 
 The either click or copy and paste the URL into your browser (we recommend Google Chrome), which then will direct you into the homepage of SNP Browser, where you can start your graound braking research. 
 
 ## Authors 
-- Christian David Arenas Daza: ![ChristianDaza](https://github.com/ChristianDaza)
-- Eri Krasniqi: ![erikras12](https://github.com/erikras12)
-- Khadidja Rym Lebboukh: ![RYM213](https://github.com/RYMY213)                                
-- Yasemin Sevgi Bridges: ![yaseminbridges](https://github.com/yaseminbridges)   
+- Christian David Arenas Daza: [ChristianDaza](https://github.com/ChristianDaza)
+- Eri Krasniqi: [erikras12](https://github.com/erikras12)
+- Khadidja Rym Lebboukh: [RYM213](https://github.com/RYMY213)                                
+- Yasemin Sevgi Bridges: [yaseminbridges](https://github.com/yaseminbridges)   
 
 ## Development status
 
