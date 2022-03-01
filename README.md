@@ -24,7 +24,7 @@ This software was developed by the Genomic Analytics group (4 MSc Bioinformatics
 - WTForms==3.0.1
 - Flask_Bootstrap==3.3.7.1
 - Flask_APScheduler==1.12.3
-- reuqest==2.27.1
+- requests==2.27.1
 - Pandas==1.4.0
 - scikit-allel==1.3.5
 
