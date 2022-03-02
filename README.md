@@ -67,13 +67,13 @@ Please note that SNP Browser is no longer under active development and is now in
 
 APA:
 ```
-Arenas Daza, C. D., Krasniqi, E., Lebboukh, K. R., & Sevgi Bridges, Y. (2022). SNP Browser (Version 1.0.0) [Computer software]. https://doi.org/10.5281/zenodo.1234
+Arenas Daza, C. D., Krasniqi, E., Lebboukh, R. K., & Bridges, Y. (2022). SNP Browser (Version 1.0.0) [Computer software]. https://doi.org/10.5281/zenodo.1234
 ```
 
 BibTeX:
 ```
 @software{Arenas_Daza_SNP_Browser_2022,
-author = {Arenas Daza, Christian David and Krasniqi, Eri and Lebboukh, Khadidja Rym and Sevgi Bridges, Yasemin},
+author = {Arenas Daza, Christian David and Krasniqi, Eri and Lebboukh, Rym Khadidja and Bridges, Yasemin},
 doi = {10.5281/zenodo.1234},
 month = {3},
 title = {{SNP Browser}},
