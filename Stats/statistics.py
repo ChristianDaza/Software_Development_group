@@ -88,7 +88,7 @@ def tajima_D(inputfile, mini, maxi):
     df = df.loc[(df['POS'] >= mini) & (df['POS'] <= maxi)]
     new_dataframe = df.filter(['POS'])  # extract the position from the dataframe
     position = pd.DataFrame(new_dataframe, columns=['POS']).to_numpy()
-    position = position.flatten()    # alter position to one dimensional numpy array for correct input for sequence diversity function
+    position = position.flatten()    # alter position dataframe to one dimensional numpy array for correct input for sequence diversity function
     df = df.drop(['POS'], axis=1)
     arr = pd.DataFrame(df).to_numpy()     # haplotype dataframe to numpy array
     haplotypes = allel.HaplotypeArray(arr)   
