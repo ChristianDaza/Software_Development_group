@@ -45,7 +45,7 @@ pip install plotly
 To our software from your local machine please download the this repository using the following code:
 ```
 git clone https://github.com/ChristianDaza/Software_Development_group.git
-``
+```
 
 
 ### Runing our application 
@@ -71,7 +71,7 @@ Please note that SNP Browser is no longer under the  development phase and is no
 
 APA:
 ```
-Arenas Daza, C. D., Krasniqi, E., Lebboukh, R. K., & Bridges, Y. (2022). SNP Browser (Version 1.0.0) [Computer software]. https://doi.org/10.5281/zenodo.1234
+Arenas Daza, C. D., Krasniqi, E., Lebboukh, R. K., & Bridges, Y. (2022). SNP Browser (Version 1.0.0) [Computer software]. https://github.com/ChristianDaza/Software_Development_group
 ```
 
 BibTeX:
