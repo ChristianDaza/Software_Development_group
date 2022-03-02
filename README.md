@@ -1,5 +1,6 @@
 # Genome Analytics
 ![](https://img.shields.io/badge/licence-Genome%20Analytics-blue) ![](https://img.shields.io/badge/version-1.0.0-blue) ![](https://img.shields.io/badge/platforms%20-macOS--64%20%7C%20win--64-lightgrey)
+
 ##  SNP Browser  Software
 
 SNP browser is a fast and accurate application that allows information retrieval of SNPs from Chromosome 22 in conjunction with genotype and allele frequency.This application also allows the user to  perform genetic statistical testing; Nucleotide diversity, homozygosity, Tajima's D, and fixation index. The return results are display, plotted, and can be downloaded as a txt file. 
@@ -7,12 +8,11 @@ SNP browser is a fast and accurate application that allows information retrieval
 This software was developed by the Genomic Analytics group (4 MSc Bioinformatics students From Queen Mary University) under the guidance of Professor Conrad Bessant and Dr Matteo Fumagalli, in response to the need for an inclusive platform that not only allows the querying and extraction of genomic information but also statistical testing.
 
 - Documentation:  https://github.com/ChristianDaza/Software_Development_group/blob/Main/Documentation
-- Source code: https://github.com/ChristianDaza/Software_Development_group/tree/Main/website
-- Meet our team: 
+- Source code: https://github.com/ChristianDaza/Software_Development_group/tree/Main/website 
 
 
 
-## Getting  started - End user
+## Getting  started
 
 ### The following packages will be required  for this application 
 
@@ -47,8 +47,7 @@ To run this website from your local machine please download the [website](https:
 
 ### Runing our application 
 
-Our application can be run various ways including code editors such as Visual Studio Code, Pycharm or in the command line.
-In all cases open or navegate into the website directory in your local machine, and ran the following command.
+Using the command line  move into the  website directory and then type the following command 
 
 ``` python3 application.py ```
 
@@ -61,7 +60,7 @@ The either click or copy and paste the URL into your browser (we recommend Googl
 - Yasemin Bridges: [yaseminbridges](https://github.com/yaseminbridges)   
 
 ## Development status
-Please note that SNP Browser is no longer under active development and is now in "maintenance-only" mode.
+Please note that SNP Browser is no longer under the  development phase and is now  maintenance-only.
 
 ## How to cite our software
 
@@ -83,6 +82,7 @@ year = {2022}
 }
 ```
 
-
+## Acknowledgments
+-  We like to thank Professor Conrad Bessant and Dr Matteo Fumagalli for their support and advice provided the developemnt of this software.
 
 
