@@ -38,6 +38,7 @@ pip install Flask-Bootstrap
 pip install Flask-APScheduler
 pip install requests
 pip install scikit-allel
+pip install plotly
 ```
 
 ### Installing
