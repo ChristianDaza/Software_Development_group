@@ -34,8 +34,8 @@ To install the above packages:
 pip install Flask-WTF  
 pip install Werkzeug
 pip install WTForms
-pip install Flask-Bootstrap
-pip install Flask-APScheduler
+pip install Flask_Bootstrap
+pip install Flask_APScheduler
 pip install requests
 pip install scikit-allel
 ```
