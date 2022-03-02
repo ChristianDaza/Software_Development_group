@@ -3,13 +3,14 @@
 
 ##  SNP Browser  Software
 
-SNP browser is a fast and accurate application that allows information retrieval of SNPs from Chromosome 22 in conjunction with genotype and allele frequency.This application also allows the user to  perform genetic statistical testing; Nucleotide diversity, homozygosity, Tajima's D, and fixation index. The return results are display, plotted, and can be downloaded as a txt file. 
+
+
+SNP browser is a fast and accurate software that allows information retrieval of SNPs from Chromosome 22, in conjunction with genotype and allele frequency. This software also allows the user to perform genetic statistical testing; Nucleotide diversity, homozygosity, Tajima's D, and fixation index. The return results are displayed, plotted, and can be downloaded as a text file. 
 
 This software was developed by the Genomic Analytics group (4 MSc Bioinformatics students From Queen Mary University) under the guidance of Professor Conrad Bessant and Dr Matteo Fumagalli, in response to the need for an inclusive platform that not only allows the querying and extraction of genomic information but also statistical testing.
 
 - Documentation:  https://github.com/ChristianDaza/Software_Development_group/blob/Main/Documentation
 - Source code: https://github.com/ChristianDaza/Software_Development_group/tree/Main/website 
-
 
 
 ## Getting  started
@@ -42,20 +43,19 @@ pip install plotly
 ```
 
 ### Installing
-To our software from your local machine please download the this repository using the following code:
+To our software from your local machine please download this repository using the following code:
 ```
 git clone https://github.com/ChristianDaza/Software_Development_group.git
 ```
 
-### Runing our application 
+### Runing our Software
 
-Our software can be run in the command line, Visual studio Code and PyCharm.
-
-Using the command line  move into the  website directory and then type the following command 
+Our software can be run in the command line, Visual studio Code and PyCharm, but we will follow the command line approach.
+Using the command line  move into the  website directory and then type the following command. 
 
 ``` python3 application.py ```
 
-Then copy and paste the URL into your browser (we recommend Google Chrome or Safary), which then will direct you into the homepage of SNP Browser, where you can start your ground breaking research. 
+Then copy and paste the URL into your browser (we recommend Google Chrome or Safari), which will direct you to the homepage of SNP Browser, where you can start your groundbreaking research.. 
 
 ## Authors 
 - Christian David Arenas Daza: [ChristianDaza](https://github.com/ChristianDaza)
@@ -87,6 +87,6 @@ year = {2022}
 ```
 
 ## Acknowledgments
--  We like to thank Professor Conrad Bessant and Dr Matteo Fumagalli for their support and advice provided during the developemnt of this software.
+-  We like to thank Professor Conrad Bessant and Dr Matteo Fumagalli for the support and advice provided during the development of this software.
 
 
