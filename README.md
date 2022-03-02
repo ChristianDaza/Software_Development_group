@@ -41,7 +41,7 @@ pip install scikit-allel
 ```
 
 ### Installing
-To run this website from your local machine please download the ![website](https://github.com/ChristianDaza/Software_Development_group/tree/Main/website) directory
+To run this website from your local machine please download the [website](https://github.com/ChristianDaza/Software_Development_group/tree/Main/website) directory
 
 ### Runing our application 
 
@@ -59,6 +59,7 @@ The either click or copy and paste the URL into your browser (we recommend Googl
 - Yasemin Sevgi Bridges: [yaseminbridges](https://github.com/yaseminbridges)   
 
 ## Development status
+Please note that SNP Browser is no longer under active development and is now in "maintenance-only" mode.
 
 ## How to cite our software
 
@@ -81,5 +82,5 @@ year = {2022}
 ```
 
 
-#### Licence
+
 
