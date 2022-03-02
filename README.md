@@ -45,7 +45,7 @@ pip install plotly
 To run this website from your local machine please download the [website](https://github.com/ChristianDaza/Software_Development_group/tree/Main/website) directory
 
 ```
-git clone https://github.com/ChristianDaza/Software_Development_group/website
+git clone https://github.com/ChristianDaza/Software_Development_group/ website
 ```
 
 ### Runing our application 
