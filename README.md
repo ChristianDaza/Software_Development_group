@@ -44,9 +44,6 @@ pip install plotly
 ### Installing
 To run this website from your local machine please download the [website](https://github.com/ChristianDaza/Software_Development_group/tree/Main/website) directory
 
-```
-git clone https://github.com/ChristianDaza/Software_Development_group/ website
-```
 
 ### Runing our application 
 
@@ -60,8 +57,8 @@ The either click or copy and paste the URL into your browser (we recommend Googl
 ## Authors 
 - Christian David Arenas Daza: [ChristianDaza](https://github.com/ChristianDaza)
 - Eri Krasniqi: [erikras12](https://github.com/erikras12)
-- Khadidja Rym Lebboukh: [RYM213](https://github.com/RYMY213)                                
-- Yasemin Sevgi Bridges: [yaseminbridges](https://github.com/yaseminbridges)   
+- Rym Khadidja Lebboukh: [RYM213](https://github.com/RYMY213)                                
+- Yasemin Bridges: [yaseminbridges](https://github.com/yaseminbridges)   
 
 ## Development status
 Please note that SNP Browser is no longer under active development and is now in "maintenance-only" mode.
