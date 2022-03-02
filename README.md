@@ -42,16 +42,21 @@ pip install plotly
 ```
 
 ### Installing
-To run this website from your local machine please download the [website](https://github.com/ChristianDaza/Software_Development_group/tree/Main/website) directory
+To our software from your local machine please download the this repository using the following code:
+```
+git clone https://github.com/ChristianDaza/Software_Development_group.git
+``
 
 
 ### Runing our application 
+
+our software can be run in the command line, Visual studio  and Code and PyCharm.
 
 Using the command line  move into the  website directory and then type the following command 
 
 ``` python3 application.py ```
 
-The either click or copy and paste the URL into your browser (we recommend Google Chrome), which then will direct you into the homepage of SNP Browser, where you can start your graound breaking research. 
+Then copy and paste the URL into your browser (we recommend Google Chrome or Safary), which then will direct you into the homepage of SNP Browser, where you can start your ground breaking research. 
 
 ## Authors 
 - Christian David Arenas Daza: [ChristianDaza](https://github.com/ChristianDaza)
