@@ -47,16 +47,15 @@ To our software from your local machine please download the this repository usin
 git clone https://github.com/ChristianDaza/Software_Development_group.git
 ```
 
-
 ### Runing our application 
 
-- our software can be run in the command line, Visual studio  and Code and PyCharm.
+Our software can be run in the command line, Visual studio Code and PyCharm.
 
-- Using the command line  move into the  website directory and then type the following command 
+Using the command line  move into the  website directory and then type the following command 
 
 ``` python3 application.py ```
 
-- Then copy and paste the URL into your browser (we recommend Google Chrome or Safary), which then will direct you into the homepage of SNP Browser, where you can start your ground breaking research. 
+Then copy and paste the URL into your browser (we recommend Google Chrome or Safary), which then will direct you into the homepage of SNP Browser, where you can start your ground breaking research. 
 
 ## Authors 
 - Christian David Arenas Daza: [ChristianDaza](https://github.com/ChristianDaza)
@@ -65,7 +64,7 @@ git clone https://github.com/ChristianDaza/Software_Development_group.git
 - Yasemin Bridges: [yaseminbridges](https://github.com/yaseminbridges)   
 
 ## Development status
-Please note that SNP Browser is no longer under the  development phase and is now  maintenance-only.
+Please note that SNP Browser is no longer under the development phase and will only be maintained.
 
 ## How to cite our software
 
@@ -88,6 +87,6 @@ year = {2022}
 ```
 
 ## Acknowledgments
--  We like to thank Professor Conrad Bessant and Dr Matteo Fumagalli for their support and advice provided the developemnt of this software.
+-  We like to thank Professor Conrad Bessant and Dr Matteo Fumagalli for their support and advice provided during the developemnt of this software.
 
 
