@@ -42,7 +42,7 @@ pip install plotly
 ```
 
 ### Installing
-To run this website from your local machine please download the [website](https://github.com/ChristianDaza/Software_Development_group/ website![image](https://user-images.githubusercontent.com/53874392/156352419-42e8937d-ae8c-4bb9-8284-56f13ca88b7d.png) directory
+To run this website from your local machine please download the [website](https://user-images.githubusercontent.com/53874392/156352419-42e8937d-ae8c-4bb9-8284-56f13ca88b7d.png) directory
 
 ### Runing our application 
 
