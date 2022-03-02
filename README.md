@@ -50,13 +50,13 @@ git clone https://github.com/ChristianDaza/Software_Development_group.git
 
 ### Runing our application 
 
-our software can be run in the command line, Visual studio  and Code and PyCharm.
+- our software can be run in the command line, Visual studio  and Code and PyCharm.
 
-Using the command line  move into the  website directory and then type the following command 
+- Using the command line  move into the  website directory and then type the following command 
 
 ``` python3 application.py ```
 
-Then copy and paste the URL into your browser (we recommend Google Chrome or Safary), which then will direct you into the homepage of SNP Browser, where you can start your ground breaking research. 
+- Then copy and paste the URL into your browser (we recommend Google Chrome or Safary), which then will direct you into the homepage of SNP Browser, where you can start your ground breaking research. 
 
 ## Authors 
 - Christian David Arenas Daza: [ChristianDaza](https://github.com/ChristianDaza)
