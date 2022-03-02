@@ -46,7 +46,6 @@ To run this website from your local machine please download the [website](https:
 
 ```
 git clone https://github.com/ChristianDaza/Software_Development_group/website
-
 ```
 
 ### Runing our application 
