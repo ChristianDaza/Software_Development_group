@@ -21,7 +21,7 @@ SNP Browser was developed by Genome Analytics, a group composed of four MSc Bioi
 Our software can be run in the command line, Visual studio Code and PyCharm, but we will follow the command line approach.
 
 ##### Require packages
-Using the command line install the following packages, which can be also be found in the [requirement](https://github.com/ChristianDaza/Software_Development_group/blob/Main/requirements.txt) file.
+Using the command line install the following packages, found in the [requirement](https://github.com/ChristianDaza/Software_Development_group/blob/Main/requirements.txt) file.
 
 - Python 3.9.5
 - Flask==2.0.2
@@ -33,6 +33,10 @@ Using the command line install the following packages, which can be also be foun
 - numpy==1.20.3
 - scikit-allel==1.3.5
 - plotly==5.5.0
+
+Use the following command to install all the required pakages.
+
+``` pip install -r requirements.txt ```
 
 ### Installing
 To run our software from your local machine, use the command line to navegate into your desktop directory and download this repository using the following code:
