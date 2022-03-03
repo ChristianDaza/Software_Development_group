@@ -28,6 +28,7 @@ SNP Browser was developed by Genome Analytics, a group composed of four MSc Bioi
 - requests==2.27.1
 - Pandas==1.4.0
 - scikit-allel==1.3.5
+- plotly==5.5.0
 
 
 To install the above packages:
