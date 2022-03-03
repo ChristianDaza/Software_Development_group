@@ -20,6 +20,14 @@ SNP Browser was developed by Genome Analytics, a group composed of four MSc Bioi
 ### Runing our Software
 Our software can be run in the command line, Visual studio Code and PyCharm, but we will follow the command line approach.
 
+
+### Installing
+To run our software from your local machine, use the command line to navegate into your desktop directory and download this repository using the following code:
+
+```
+git clone https://github.com/ChristianDaza/Software_Development_group.git
+```
+
 ##### Require packages
 Using the command line install the following packages, found in the [requirement](https://github.com/ChristianDaza/Software_Development_group/blob/Main/requirements.txt) file.
 
@@ -36,13 +44,7 @@ Using the command line install the following packages, found in the [requirement
 
 Use the following command to install all the required pakages.
 
-``` pip install -r requirements.txt ```
-
-### Installing
-To run our software from your local machine, use the command line to navegate into your desktop directory and download this repository using the following code:
-
-```
-git clone https://github.com/ChristianDaza/Software_Development_group.git
+``` pip install -r requirements.txt 
 ```
 
 ### Rubning SNP Browser
