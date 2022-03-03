@@ -15,9 +15,19 @@ SNP Browser was developed by Genome Analytics, a group composed of four MSc Bioi
 
 ## Getting  started
 
-### The following packages will be required for this software, 
-These packages can also be found in the [requirement](https://github.com/ChristianDaza/Software_Development_group/blob/Main/requirements.txt) file.
+### Installing
+To run our software from your local machine please download the [website](https://github.com/ChristianDaza/Software_Development_group/tree/Main/website) directory or the whole repository using the following code:
 
+```
+git clone https://github.com/ChristianDaza/Software_Development_group.git
+```
+
+
+### Runing our Software
+Our software can be run in the command line, Visual studio Code and PyCharm, but we will follow the command line approach.
+
+##### Require packages
+Using the command line install the following packages, which can be also be found in the [requirement](https://github.com/ChristianDaza/Software_Development_group/blob/Main/requirements.txt) file.
 
 - Python 3.9.5
 - Flask==2.0.2
@@ -30,18 +40,8 @@ These packages can also be found in the [requirement](https://github.com/Christi
 - scikit-allel==1.3.5
 - plotly==5.5.0
 
-
-### Installing
-To run our software from your local machine please download the [website](https://github.com/ChristianDaza/Software_Development_group/tree/Main/website) directory or the whole repository using the following code:
-
-```
-git clone https://github.com/ChristianDaza/Software_Development_group.git
-```
-
-### Runing our Software
-
-Our software can be run in the command line, Visual studio Code and PyCharm, but we will follow the command line approach.
-Using the command line  move into the  website directory and then type the following command. 
+### Rubning SNP Browser
+Then move into the  website directory and  type the following command. 
 
 ``` python3 application.py ```
 
