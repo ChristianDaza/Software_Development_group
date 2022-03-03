@@ -16,7 +16,7 @@ SNP Browser was developed by Genome Analytics, a group composed of four MSc Bioi
 ## Getting  started
 
 ### Installing
-To run our software from your local machine please download the [website](https://github.com/ChristianDaza/Software_Development_group/tree/Main/website) directory or the whole repository using the following code:
+To run our software from your local machine download this repository using the following code:
 
 ```
 git clone https://github.com/ChristianDaza/Software_Development_group.git
