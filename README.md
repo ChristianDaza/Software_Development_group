@@ -15,7 +15,7 @@ SNP Browser was developed by Genome Analytics, a group composed of four MSc Bioi
 
 ## Getting  started
 
-### The following packages will be required  for this application 
+### The following packages will be required  for this software
 
 
 - Python 3.9.5
@@ -43,7 +43,7 @@ pip install plotly
 ```
 
 ### Installing
-To our software from your local machine please download the [website](https://github.com/ChristianDaza/Software_Development_group/tree/Main/website) directory or the whole repository:
+To run our software from your local machine please download the [website](https://github.com/ChristianDaza/Software_Development_group/tree/Main/website) directory or the whole repository using the following code:
 
 ```
 git clone https://github.com/ChristianDaza/Software_Development_group.git
