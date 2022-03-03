@@ -9,7 +9,7 @@ SNP Browser is a fast and accurate software that allows for genomic data retriev
 SNP Browser was developed by Genome Analytics, a group composed of four MSc Bioinformatics students from the Queen Mary University of London under the guidance of Professor Conrad Bessant and Dr Matteo Fumagalli.
 
 
-- Documentation: https://github.com/ChristianDaza/Software_Development_group/blob/Main/Documentation/Documetation_SDG.pdf
+- Documentation: https://github.com/ChristianDaza/Software_Development_group/tree/Main/Documentation
 - Source code: https://github.com/ChristianDaza/Software_Development_group/tree/Main/website 
 
 
