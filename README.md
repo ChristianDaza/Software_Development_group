@@ -15,12 +15,6 @@ SNP Browser was developed by Genome Analytics, a group composed of four MSc Bioi
 
 ## Getting  started
 
-### Installing
-To run our software from your local machine download this repository using the following code:
-
-```
-git clone https://github.com/ChristianDaza/Software_Development_group.git
-```
 
 
 ### Runing our Software
@@ -39,6 +33,13 @@ Using the command line install the following packages, which can be also be foun
 - numpy==1.20.3
 - scikit-allel==1.3.5
 - plotly==5.5.0
+
+### Installing
+To run our software from your local machine, use the command line to navegate into your desktop directory and download this repository using the following code:
+
+```
+git clone https://github.com/ChristianDaza/Software_Development_group.git
+```
 
 ### Rubning SNP Browser
 Wihtin the command line  move into the  website directory and type the following command. 
