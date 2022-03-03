@@ -44,11 +44,12 @@ Using the command line install the following packages, found in the [requirement
 
 Use the following command to install all the required pakages.
 
-``` pip install -r requirements.txt 
+```
+pip install -r requirements.txt 
 ```
 
 ### Rubning SNP Browser
-Wihtin the command line  move into the  website directory and type the following command. 
+Within the command line  move into the  website directory and type the following command. 
 
 ``` python3 application.py ```
 
