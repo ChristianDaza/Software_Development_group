@@ -15,33 +15,20 @@ SNP Browser was developed by Genome Analytics, a group composed of four MSc Bioi
 
 ## Getting  started
 
-### The following packages will be required  for this software
+### The following packages will be required for this software, which can also be found in the [requirement](https://github.com/ChristianDaza/Software_Development_group/blob/Main/requirements.txt) file.
 
 
 - Python 3.9.5
 - Flask==2.0.2
-- Werkzeug==2.0.3
 - Flask-WTF==1.0.0
 - WTForms==3.0.1
 - Flask_Bootstrap==3.3.7.1
 - Flask_APScheduler==1.12.3
-- requests==2.27.1
 - Pandas==1.4.0
+- numpy==1.20.3
 - scikit-allel==1.3.5
 - plotly==5.5.0
 
-
-To install the above packages:
-```
-pip install Flask-WTF  
-pip install Werkzeug
-pip install WTForms
-pip install Flask-Bootstrap
-pip install Flask-APScheduler
-pip install requests
-pip install scikit-allel
-pip install plotly
-```
 
 ### Installing
 To run our software from your local machine please download the [website](https://github.com/ChristianDaza/Software_Development_group/tree/Main/website) directory or the whole repository using the following code:
