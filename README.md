@@ -41,7 +41,7 @@ Using the command line install the following packages, which can be also be foun
 - plotly==5.5.0
 
 ### Rubning SNP Browser
-Then move into the  website directory and  type the following command. 
+Wihtin the command line  move into the  website directory and type the following command. 
 
 ``` python3 application.py ```
 
