@@ -15,7 +15,8 @@ SNP Browser was developed by Genome Analytics, a group composed of four MSc Bioi
 
 ## Getting  started
 
-### The following packages will be required for this software, which can also be found in the [requirement](https://github.com/ChristianDaza/Software_Development_group/blob/Main/requirements.txt) file.
+### The following packages will be required for this software, 
+These packages can also be found in the [requirement](https://github.com/ChristianDaza/Software_Development_group/blob/Main/requirements.txt)file.
 
 
 - Python 3.9.5
