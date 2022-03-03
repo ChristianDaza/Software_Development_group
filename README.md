@@ -48,10 +48,12 @@ Use the following command to install all the required pakages.
 pip install -r requirements.txt 
 ```
 
-### Rubning SNP Browser
+### Runing SNP Browser
 Within the command line  move into the  website directory and type the following command. 
 
-``` python3 application.py ```
+``` 
+python3 application.py 
+```
 
 Then copy and paste the URL into your browser (we recommend Google Chrome or Safari), which will direct you to the homepage of SNP Browser, where you can start your groundbreaking research.. 
 
