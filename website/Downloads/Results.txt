@@ -1,5 +1,0 @@
-Population Code,Homozygosity
-GWD,0.982402022756005
-PUR,0.9825274725274724
-Population Code,Fixation Index
-GWD vs PUR,0.03929999553580025
