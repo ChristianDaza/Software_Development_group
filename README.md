@@ -3,11 +3,11 @@
 
 ##  SNP Browser  Software
 
+SNP Browser is a fast and accurate software that allows for genomic data retrieval of SNPs located on chromosome 22 in conjunction with genotype and allele frequencies across populations. A variety of population summary statistics, which include, Nucleotide diversity, Homozygosity, Tajima’s D, and fixation index (FST) can be computed, which are returned in a tabular format and plotted along sliding windows, with the additional opportunity to download the results as a text file. !
 
 
-SNP browser is a fast and accurate software that allows information retrieval of SNPs from Chromosome 22, in conjunction with genotype and allele frequency. This software also allows the user to perform genetic statistical testing; Nucleotide diversity, homozygosity, Tajima's D, and fixation index. The return results are displayed, plotted, and can be downloaded as a text file. 
+SNP Browser was developed by Genome Analytics, a group composed of four MSc Bioinformatics students from the Queen Mary University of London under the guidance of Professor Conrad Bessant and Dr Matteo Fumagalli.
 
-This software was developed by the Genomic Analytics group (4 MSc Bioinformatics students From Queen Mary University) under the guidance of Professor Conrad Bessant and Dr Matteo Fumagalli, in response to the need for an inclusive platform that not only allows the querying and extraction of genomic information but also statistical testing.
 
 - Documentation:  https://github.com/ChristianDaza/Software_Development_group/blob/Main/Documentation
 - Source code: https://github.com/ChristianDaza/Software_Development_group/tree/Main/website 
@@ -43,7 +43,8 @@ pip install plotly
 ```
 
 ### Installing
-To our software from your local machine please download this repository using the following code:
+To our software from your local machine please download the [website](https://github.com/ChristianDaza/Software_Development_group/tree/Main/website) directory or the whole repository:
+
 ```
 git clone https://github.com/ChristianDaza/Software_Development_group.git
 ```
