@@ -29,7 +29,7 @@ git clone https://github.com/ChristianDaza/Software_Development_group.git
 ```
 
 ### Required packages
-Using the command line install the following packages, found in the [requirement](https://github.com/ChristianDaza/Software_Development_group/blob/Main/requirements.txt) file.
+Navegate into the Software_Development_group folder using the command line and install the following packages, found in the [requirement](https://github.com/ChristianDaza/Software_Development_group/blob/Main/requirements.txt) file.
 
 - Python 3.9.5
 - Flask==2.0.2
