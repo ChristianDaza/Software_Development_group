@@ -28,7 +28,7 @@ To run our software from your local machine, use the command line to navegate in
 git clone https://github.com/ChristianDaza/Software_Development_group.git
 ```
 
-##### Require packages
+#### Require packages
 Using the command line install the following packages, found in the [requirement](https://github.com/ChristianDaza/Software_Development_group/blob/Main/requirements.txt) file.
 
 - Python 3.9.5
